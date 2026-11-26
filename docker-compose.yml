@@ -1,0 +1,51 @@
+# Local development stack. SQLite is the default; PostgreSQL is optional.
+# Do not start paid cloud resources from this file.
+services:
+  postgres:
+    image: postgres:16-alpine
+    profiles: ["postgres"]
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: personalitydna
+    ports:
+      - "5432:5432"
+    volumes:
+      - pdna_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./services/backend
+      dockerfile: ../../infrastructure/docker/Dockerfile.backend
+    environment:
+      DATABASE_URL: sqlite:////app/data/personalitydna.db
+      APP_SECRET_KEY: local-dev-only-change-me
+      APP_BASE_URL: http://localhost:3000
+      CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./services/backend:/app
+      - pdna_data:/app/data
+      - ./assessment-content:/assessment-content
+      - ./ai:/ai
+
+  web:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.web
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  pdna_pg:
+  pdna_data:

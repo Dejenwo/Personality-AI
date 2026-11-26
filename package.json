@@ -1,0 +1,20 @@
+{
+  "name": "personality-dna-ai",
+  "private": true,
+  "version": "0.1.0",
+  "description": "PersonalityDNA AI — AI-powered personality intelligence and human development platform",
+  "packageManager": "pnpm@10.33.4",
+  "scripts": {
+    "dev": "pnpm --filter @personalitydna/web dev",
+    "dev:web": "pnpm --filter @personalitydna/web dev",
+    "dev:admin": "pnpm --filter @personalitydna/web dev",
+    "dev:mobile": "pnpm --filter @personalitydna/mobile start",
+    "build": "pnpm --filter @personalitydna/web build",
+    "lint": "pnpm --filter @personalitydna/web lint",
+    "typecheck": "pnpm --filter @personalitydna/web typecheck",
+    "test:web": "pnpm --filter @personalitydna/web test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "slug": "productivity",
+  "name": "Productivity Habits",
+  "short_name": "Productivity",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": false,
+  "tier": "premium",
+  "category": "growth",
+  "description": "Everyday work-management preferences. Not a measure of worth or output.",
+  "instructions": "Rate your typical week, including ordinary constraints.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "prod_01",
+      "text": "I start the day with a short list of must-complete work.",
+      "trait": "productivity",
+      "keyed": "+",
+      "facet": "priorities",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_02",
+      "text": "I batch similar tasks instead of switching constantly.",
+      "trait": "productivity",
+      "keyed": "+",
+      "facet": "focus",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_03",
+      "text": "I close loops by capturing tasks outside my head.",
+      "trait": "productivity",
+      "keyed": "+",
+      "facet": "capture",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_04",
+      "text": "I can stop a task at a clear handoff point.",
+      "trait": "productivity",
+      "keyed": "+",
+      "facet": "boundaries",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_05",
+      "text": "I design my environment to make the next action easier.",
+      "trait": "productivity",
+      "keyed": "+",
+      "facet": "environment",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_06",
+      "text": "I often begin the day reacting to whatever appears first.",
+      "trait": "productivity",
+      "keyed": "-",
+      "facet": "priorities",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_07",
+      "text": "I switch tasks whenever a new idea appears.",
+      "trait": "productivity",
+      "keyed": "-",
+      "facet": "focus",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_08",
+      "text": "I rely on memory to keep track of commitments.",
+      "trait": "productivity",
+      "keyed": "-",
+      "facet": "capture",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_09",
+      "text": "I have trouble stopping even when I am no longer effective.",
+      "trait": "productivity",
+      "keyed": "-",
+      "facet": "boundaries",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_10",
+      "text": "I wait for motivation instead of preparing the environment.",
+      "trait": "productivity",
+      "keyed": "-",
+      "facet": "environment",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_11",
+      "text": "I schedule recovery, not only output.",
+      "trait": "productivity",
+      "keyed": "+",
+      "facet": "recovery",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "prod_12",
+      "text": "I treat rest as something I earn after everything is done.",
+      "trait": "productivity",
+      "keyed": "-",
+      "facet": "recovery",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Productivity Habits Inventory",
+    "validation_status": "original_unvalidated"
+  }
+}

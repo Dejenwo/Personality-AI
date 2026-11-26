@@ -1,0 +1,8 @@
+{
+  "name": "@personalitydna/enterprise",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Enterprise portal is served at http://localhost:3000/enterprise from apps/web (ADR-003).'"
+  }
+}

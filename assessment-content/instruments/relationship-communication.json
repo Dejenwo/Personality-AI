@@ -1,0 +1,155 @@
+{
+  "slug": "relationship-communication",
+  "name": "Relationship Communication",
+  "short_name": "Relationships",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": false,
+  "tier": "premium",
+  "category": "relationships",
+  "description": "Educational look at communication habits in close relationships. Not a compatibility score and not a clinical couples assessment.",
+  "instructions": "Think about how you typically communicate with people you are close to.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "rel_01",
+      "text": "I bring up small frustrations before they accumulate.",
+      "trait": "relationship_communication",
+      "keyed": "+",
+      "facet": "directness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_02",
+      "text": "I often hope the other person will notice what I need.",
+      "trait": "relationship_communication",
+      "keyed": "-",
+      "facet": "directness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_03",
+      "text": "I can stay present when someone close to me is upset.",
+      "trait": "relationship_communication",
+      "keyed": "+",
+      "facet": "presence",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_04",
+      "text": "I feel an urge to fix the problem immediately.",
+      "trait": "relationship_communication",
+      "keyed": "-",
+      "facet": "presence",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_05",
+      "text": "I like scheduled time to talk about the relationship.",
+      "trait": "relationship_communication",
+      "keyed": "+",
+      "facet": "ritual",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_06",
+      "text": "I prefer connection to happen spontaneously.",
+      "trait": "relationship_communication",
+      "keyed": "-",
+      "facet": "ritual",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_07",
+      "text": "I can apologize specifically, including what I will do differently.",
+      "trait": "relationship_communication",
+      "keyed": "+",
+      "facet": "repair",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_08",
+      "text": "I get defensive when I receive critical feedback from someone close.",
+      "trait": "relationship_communication",
+      "keyed": "-",
+      "facet": "repair",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_09",
+      "text": "I share appreciation out loud, not only in my thoughts.",
+      "trait": "relationship_communication",
+      "keyed": "+",
+      "facet": "appreciation",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_10",
+      "text": "I assume people know I care without my saying so.",
+      "trait": "relationship_communication",
+      "keyed": "-",
+      "facet": "appreciation",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_11",
+      "text": "I can hold a difference of opinion without withdrawing.",
+      "trait": "relationship_communication",
+      "keyed": "+",
+      "facet": "differentiation",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "rel_12",
+      "text": "Disagreement makes me question the stability of the relationship.",
+      "trait": "relationship_communication",
+      "keyed": "-",
+      "facet": "differentiation",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Relationship Communication Inventory",
+    "validation_status": "original_unvalidated",
+    "limitations": "Does not predict relationship success or recommend remaining in or leaving a relationship."
+  }
+}

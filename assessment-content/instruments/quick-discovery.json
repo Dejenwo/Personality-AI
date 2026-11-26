@@ -1,0 +1,231 @@
+{
+  "slug": "quick-discovery",
+  "name": "Quick Personality Discovery",
+  "short_name": "Quick Discovery",
+  "version": "1.0.0",
+  "framework": "big_five",
+  "duration_minutes": 5,
+  "item_count": 20,
+  "is_free": true,
+  "tier": "free",
+  "category": "personality",
+  "description": "A 20-item Mini-IPIP short form for a first look at the Big Five domains. Suitable as an introduction, not as a comprehensive profile.",
+  "instructions": "Describe yourself as you generally are now, not as you wish to be. Indicate how accurately each statement describes you.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Very Inaccurate"
+    },
+    {
+      "value": 2,
+      "label": "Moderately Inaccurate"
+    },
+    {
+      "value": 3,
+      "label": "Neither Accurate Nor Inaccurate"
+    },
+    {
+      "value": 4,
+      "label": "Moderately Accurate"
+    },
+    {
+      "value": 5,
+      "label": "Very Accurate"
+    }
+  ],
+  "items": [
+    {
+      "id": "mini_01",
+      "text": "Am the life of the party.",
+      "trait": "extraversion",
+      "keyed": "+",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_02",
+      "text": "Sympathize with others' feelings.",
+      "trait": "agreeableness",
+      "keyed": "+",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_03",
+      "text": "Get chores done right away.",
+      "trait": "conscientiousness",
+      "keyed": "+",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_04",
+      "text": "Have frequent mood swings.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_05",
+      "text": "Have a vivid imagination.",
+      "trait": "openness",
+      "keyed": "+",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_06",
+      "text": "Don't talk a lot.",
+      "trait": "extraversion",
+      "keyed": "-",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_07",
+      "text": "Am not interested in other people's problems.",
+      "trait": "agreeableness",
+      "keyed": "-",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_08",
+      "text": "Often forget to put things back in their proper place.",
+      "trait": "conscientiousness",
+      "keyed": "-",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_09",
+      "text": "Am relaxed most of the time.",
+      "trait": "emotional_stability",
+      "keyed": "+",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_10",
+      "text": "Am not interested in abstract ideas.",
+      "trait": "openness",
+      "keyed": "-",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_11",
+      "text": "Talk to a lot of different people at parties.",
+      "trait": "extraversion",
+      "keyed": "+",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_12",
+      "text": "Feel others' emotions.",
+      "trait": "agreeableness",
+      "keyed": "+",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_13",
+      "text": "Like order.",
+      "trait": "conscientiousness",
+      "keyed": "+",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_14",
+      "text": "Get upset easily.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_15",
+      "text": "Have difficulty understanding abstract ideas.",
+      "trait": "openness",
+      "keyed": "-",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_16",
+      "text": "Keep in the background.",
+      "trait": "extraversion",
+      "keyed": "-",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_17",
+      "text": "Am not really interested in others.",
+      "trait": "agreeableness",
+      "keyed": "-",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_18",
+      "text": "Make a mess of things.",
+      "trait": "conscientiousness",
+      "keyed": "-",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_19",
+      "text": "Seldom feel blue.",
+      "trait": "emotional_stability",
+      "keyed": "+",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mini_20",
+      "text": "Do not have a good imagination.",
+      "trait": "openness",
+      "keyed": "-",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 1.0,
+    "max_missing": 0
+  },
+  "scientific": {
+    "instrument_name": "Mini-IPIP",
+    "item_source": "International Personality Item Pool (public domain)",
+    "short_form_citation": "Donnellan, M. B., Oswald, F. L., Baird, B. M., & Lucas, R. E. (2006). The Mini-IPIP scales: Tiny-yet-effective measures of the Big Five factors of personality. Psychological Assessment, 18(2), 192\u2013203.",
+    "item_permission": "https://ipip.ori.org/newPermission.htm",
+    "intended_population": "Adults in research and educational self-reflection contexts",
+    "limitations": "Short forms have lower reliability than longer Big Five markers. Results are educational, not clinical or occupational selection tools.",
+    "validation_status": "research_backed_short_form"
+  }
+}

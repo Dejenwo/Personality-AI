@@ -1,0 +1,154 @@
+{
+  "slug": "values",
+  "name": "Personal Values",
+  "short_name": "Values",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": false,
+  "tier": "premium",
+  "category": "values",
+  "description": "Educational reflection on personal values. Not Schwartz Value Survey and not independently validated.",
+  "instructions": "Indicate how true each statement is for you in this season of life.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "val_01",
+      "text": "Having autonomy over how I spend my time is essential.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "autonomy",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_02",
+      "text": "Belonging to a close community matters more than standing out.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "belonging",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_03",
+      "text": "I am motivated by mastery and getting better at a craft.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "mastery",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_04",
+      "text": "Stability and predictability help me do my best work.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "security",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_05",
+      "text": "I want my work to help other people in a concrete way.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "service",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_06",
+      "text": "I am energized by recognition for excellent work.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "recognition",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_07",
+      "text": "Learning something new is worth disrupting a comfortable routine.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "growth",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_08",
+      "text": "I want enough financial margin to make independent choices.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "resources",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_09",
+      "text": "Creative expression is a core part of a meaningful life.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "creativity",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_10",
+      "text": "Fairness and ethical consistency guide my decisions.",
+      "trait": "values",
+      "keyed": "+",
+      "facet": "integrity",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_11",
+      "text": "I would accept less status if it meant more personal time.",
+      "trait": "values",
+      "keyed": "-",
+      "facet": "recognition",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "val_12",
+      "text": "I would accept more uncertainty if it increased my freedom.",
+      "trait": "values",
+      "keyed": "-",
+      "facet": "security",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Values Reflection Inventory",
+    "validation_status": "original_unvalidated"
+  }
+}

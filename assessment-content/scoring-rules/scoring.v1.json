@@ -1,0 +1,12 @@
+{
+  "algorithm": "personalitydna.scoring.v1",
+  "likert": {
+    "min": 1,
+    "max": 5
+  },
+  "reverse": "score = (max + min) - raw",
+  "trait_mean": "sum(keyed scores) / answered items",
+  "scaled_0_100": "((raw_sum - min_possible) / (max_possible - min_possible)) * 100  # NOT a percentile",
+  "completion": "per-instrument min_answered_ratio and max_missing",
+  "ai": "must not generate or modify scores"
+}

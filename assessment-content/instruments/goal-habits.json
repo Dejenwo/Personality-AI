@@ -1,0 +1,154 @@
+{
+  "slug": "goal-habits",
+  "name": "Goal-Setting Habits",
+  "short_name": "Goals",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": false,
+  "tier": "premium",
+  "category": "growth",
+  "description": "Habits that support follow-through on personal goals.",
+  "instructions": "Think about the last three months, not your best intentions.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "goal_01",
+      "text": "I write goals down in specific, observable terms.",
+      "trait": "goal_habits",
+      "keyed": "+",
+      "facet": "specificity",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_02",
+      "text": "I review progress on a predictable cadence.",
+      "trait": "goal_habits",
+      "keyed": "+",
+      "facet": "review",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_03",
+      "text": "I break large goals into the next visible action.",
+      "trait": "goal_habits",
+      "keyed": "+",
+      "facet": "chunking",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_04",
+      "text": "I adjust a goal when evidence shows the plan is wrong.",
+      "trait": "goal_habits",
+      "keyed": "+",
+      "facet": "adaptability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_05",
+      "text": "I protect time for important-but-not-urgent work.",
+      "trait": "goal_habits",
+      "keyed": "+",
+      "facet": "time",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_06",
+      "text": "My goals stay mostly in my head.",
+      "trait": "goal_habits",
+      "keyed": "-",
+      "facet": "specificity",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_07",
+      "text": "I set goals and then forget them until I feel behind.",
+      "trait": "goal_habits",
+      "keyed": "-",
+      "facet": "review",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_08",
+      "text": "I try to leap to the finished outcome without intermediate steps.",
+      "trait": "goal_habits",
+      "keyed": "-",
+      "facet": "chunking",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_09",
+      "text": "I keep pursuing a plan after it has clearly stopped working.",
+      "trait": "goal_habits",
+      "keyed": "-",
+      "facet": "adaptability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_10",
+      "text": "Urgent requests usually crowd out my longer-term goals.",
+      "trait": "goal_habits",
+      "keyed": "-",
+      "facet": "time",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_11",
+      "text": "I celebrate small completions, not only final outcomes.",
+      "trait": "goal_habits",
+      "keyed": "+",
+      "facet": "reinforcement",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "goal_12",
+      "text": "If I miss a day, I tend to abandon the whole habit.",
+      "trait": "goal_habits",
+      "keyed": "-",
+      "facet": "reinforcement",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Goal Habits Inventory",
+    "validation_status": "original_unvalidated"
+  }
+}

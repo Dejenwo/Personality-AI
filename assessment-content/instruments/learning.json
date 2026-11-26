@@ -1,0 +1,155 @@
+{
+  "slug": "learning",
+  "name": "Learning Preferences",
+  "short_name": "Learning",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": true,
+  "tier": "free",
+  "category": "growth",
+  "description": "Preferred ways of learning new skills. Learning-style labels are treated as preferences, not fixed abilities.",
+  "instructions": "Think about how you actually learned something recent, not how you wish you learned.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "learn_01",
+      "text": "I learn best by trying a small experiment quickly.",
+      "trait": "learning",
+      "keyed": "+",
+      "facet": "experiential",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_02",
+      "text": "I learn best from a structured explanation first.",
+      "trait": "learning",
+      "keyed": "-",
+      "facet": "experiential",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_03",
+      "text": "I prefer reading and taking notes at my own pace.",
+      "trait": "learning",
+      "keyed": "+",
+      "facet": "verbal",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_04",
+      "text": "I prefer diagrams, maps, or worked examples I can see.",
+      "trait": "learning",
+      "keyed": "-",
+      "facet": "verbal",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_05",
+      "text": "Teaching someone else helps me understand a topic.",
+      "trait": "learning",
+      "keyed": "+",
+      "facet": "social",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_06",
+      "text": "I prefer studying privately before I discuss an idea.",
+      "trait": "learning",
+      "keyed": "-",
+      "facet": "social",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_07",
+      "text": "I like spaced review over last-minute immersion.",
+      "trait": "learning",
+      "keyed": "+",
+      "facet": "spacing",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_08",
+      "text": "I learn in intense bursts close to a deadline.",
+      "trait": "learning",
+      "keyed": "-",
+      "facet": "spacing",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_09",
+      "text": "I seek feedback early, even when the work is unfinished.",
+      "trait": "learning",
+      "keyed": "+",
+      "facet": "feedback",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_10",
+      "text": "I prefer to polish privately before anyone reviews my work.",
+      "trait": "learning",
+      "keyed": "-",
+      "facet": "feedback",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_11",
+      "text": "I connect new ideas to something I already know.",
+      "trait": "learning",
+      "keyed": "+",
+      "facet": "elaboration",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "learn_12",
+      "text": "I try to memorize details before I understand the structure.",
+      "trait": "learning",
+      "keyed": "-",
+      "facet": "elaboration",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Learning Preferences Inventory",
+    "validation_status": "original_unvalidated",
+    "limitations": "Does not endorse the discredited meshing hypothesis that people learn only in one modality."
+  }
+}

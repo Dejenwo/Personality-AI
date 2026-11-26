@@ -1,0 +1,667 @@
+"""Original PersonalityDNA archetype system.
+
+Archetypes are descriptive product constructs mapped from Big Five domain
+means. They are not Myers-Briggs types, not scientifically established
+personality categories, and not validated diagnostic labels.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+HIGH_CUT = 3.25
+LOW_CUT = 2.75
+
+# Mapping uses four domains. Emotional stability flavors interpretation only.
+# H = high (>= HIGH_CUT), L = low (<= LOW_CUT). Mid-range scores lean to the
+# nearer pole for primary assignment and are flagged as mixed.
+ARCHETYPE_GRID: dict[str, str] = {
+    "HHHH": "mentor",
+    "HHHL": "strategist",
+    "HHLH": "diplomat",
+    "HHLL": "analyst",
+    "HLHH": "visionary",
+    "HLHL": "innovator",
+    "HLLH": "creator",
+    "HLLL": "investigator",
+    "LHHH": "connector",
+    "LHHL": "builder",
+    "LHLH": "organizer",
+    "LHLL": "independent-thinker",
+    "LLHH": "collaborator",
+    "LLHL": "motivator",
+    "LLLH": "advocate",
+    "LLLL": "explorer",
+}
+
+
+ARCHETYPES: dict[str, dict] = {
+    "strategist": {
+        "slug": "strategist",
+        "name": "The Strategist",
+        "tagline": "Directs energy toward a long game others have not named yet.",
+        "palette": {"primary": "#312E81", "accent": "#6366F1"},
+        "symbol": "compass",
+        "description": "The Strategist combines intellectual range with structured follow-through and an independent streak. You tend to frame problems as systems, look several moves ahead, and prefer a plan you can defend.",
+        "preferences": [
+            "Clear goals with room to choose the method",
+            "Honest debate over comfortable consensus",
+            "Time to think before a high-stakes decision",
+        ],
+        "strengths": [
+            "Connecting a distant outcome to the next concrete step",
+            "Holding a standard when a group drifts",
+            "Saying the unfashionable true thing",
+        ],
+        "growth_areas": [
+            "Leaving space for people who need more warmth than a plan",
+            "Noticing when speed is being confused with quality",
+            "Inviting dissent before the strategy hardens",
+        ],
+        "communication": "You likely speak in conclusions, priorities, and trade-offs. Others may hear certainty even when you are still exploring.",
+        "leadership": "You may lead by setting direction and expecting ownership. Coaching lands better when you also name the human cost of the plan.",
+        "relationships": "Loved ones may want more of the process, not only the decision. Sharing uncertainty can feel inefficient and still be connecting.",
+        "work_environment": "Best with autonomy, a real problem, and colleagues who can challenge the idea rather than the person.",
+        "reflections": [
+            "Where am I optimizing a plan that no longer matches the people in it?",
+            "What would I decide if I had to explain it to someone I respect and disagree with?",
+        ],
+        "exercises": [
+            "Write the strategy in one paragraph, then rewrite it as a letter to a skeptic.",
+            "Ask one person what they need from you besides the plan.",
+        ],
+    },
+    "visionary": {
+        "slug": "visionary",
+        "name": "The Visionary",
+        "tagline": "Sees a future worth gathering people around.",
+        "palette": {"primary": "#5B21B6", "accent": "#C4B5FD"},
+        "symbol": "horizon",
+        "description": "The Visionary pairs imagination with social energy and interpersonal warmth. You tend to paint possibility, bring people into it, and leave some of the scaffolding for later.",
+        "preferences": [
+            "Conversations that open new doors",
+            "Collaborators who can translate a picture into steps",
+            "Variety over rigid routine",
+        ],
+        "strengths": [
+            "Making an abstract idea feel personally relevant",
+            "Energizing a room that has gone flat",
+            "Holding hope without requiring proof first",
+        ],
+        "growth_areas": [
+            "Finishing the unglamorous middle of a project",
+            "Distinguishing a compelling story from a testable plan",
+            "Protecting focus when every idea is interesting",
+        ],
+        "communication": "You likely think out loud and use images, analogies, and invitations. Listeners may need the next action stated plainly.",
+        "leadership": "You may lead by inspiration. Pair every vision with an owner, a date, and a definition of done.",
+        "relationships": "You bring warmth and possibility. Partners may need you to stay with ordinary details, not only the next chapter.",
+        "work_environment": "Thrives in early-stage, cross-functional, or creative work with human contact.",
+        "reflections": [
+            "Which idea still deserves energy, and which is only novelty?",
+            "Who is carrying the operations I prefer not to see?",
+        ],
+        "exercises": [
+            "Choose one idea and write only the next three boring steps.",
+            "Ask a practical colleague to red-team the vision for 15 minutes.",
+        ],
+    },
+    "innovator": {
+        "slug": "innovator",
+        "name": "The Innovator",
+        "tagline": "Breaks a stuck pattern by trying the unofficial path.",
+        "palette": {"primary": "#0F766E", "accent": "#14B8A6"},
+        "symbol": "spark",
+        "description": "The Innovator is idea-driven, socially bold, and relatively independent of group harmony. You experiment in public, challenge defaults, and move on when a method stops teaching you something.",
+        "preferences": [
+            "Problems that have not been solved the same way twice",
+            "Permission to prototype",
+            "Sparse process until quality actually requires it",
+        ],
+        "strengths": [
+            "Generating options when a team is boxed in",
+            "Tolerating the awkwardness of a first version",
+            "Questioning sacred cows without waiting for a mandate",
+        ],
+        "growth_areas": [
+            "Staying through implementation after the insight",
+            "Reading the room when disruption is landing as disregard",
+            "Documenting enough that others can continue the work",
+        ],
+        "communication": "Direct, fast, and idea-first. You may skip the interpersonal runway other people need.",
+        "leadership": "You may lead by example and challenge. People follow more readily when they know what will not change.",
+        "relationships": "Excitement is easy; repetition is the work. Loved ones may experience your next project as abandonment of the last shared one.",
+        "work_environment": "Startups, R&D, design, or any role where questioning the brief is allowed.",
+        "reflections": [
+            "What am I leaving unfinished because the next idea is more interesting?",
+            "Where would a little more consideration cost me almost nothing?",
+        ],
+        "exercises": [
+            "Ship a small improvement to an existing system instead of starting a new one.",
+            "Before a critique, name one thing that is already working.",
+        ],
+    },
+    "analyst": {
+        "slug": "analyst",
+        "name": "The Analyst",
+        "tagline": "Finds the structure hiding inside a messy question.",
+        "palette": {"primary": "#1E3A8A", "accent": "#60A5FA"},
+        "symbol": "grid",
+        "description": "The Analyst brings high openness and conscientiousness to a more reserved, independent stance. You like models, evidence, and work you can stand behind without a crowd.",
+        "preferences": [
+            "Deep work without interruption",
+            "Standards that are explicit",
+            "Decisions that can be reconstructed later",
+        ],
+        "strengths": [
+            "Separating signal from noise",
+            "Building a case other people can audit",
+            "Holding complexity without rushing to a slogan",
+        ],
+        "growth_areas": [
+            "Sharing thinking before it feels finished",
+            "Allowing a good-enough decision when data will not arrive",
+            "Noticing the relational impact of being right",
+        ],
+        "communication": "Precise and compact. Others may need more context and warmth than feels necessary to you.",
+        "leadership": "You may lead through quality of thought. Influence grows when you narrate the 'why' and invite a challenge early.",
+        "relationships": "Loyalty often shows up as reliability and problem-solving. Partners may also want unsolved presence.",
+        "work_environment": "Research, engineering, analysis, strategy, or any craft with a high error cost.",
+        "reflections": [
+            "Where am I using more analysis to avoid a human conversation?",
+            "What decision is 80% clear and waiting for courage, not data?",
+        ],
+        "exercises": [
+            "Explain your current problem to a non-expert in five sentences.",
+            "Time-box research and decide at the alarm.",
+        ],
+    },
+    "explorer": {
+        "slug": "explorer",
+        "name": "The Explorer",
+        "tagline": "Learns by moving toward the unmarked part of the map.",
+        "palette": {"primary": "#365314", "accent": "#84CC16"},
+        "symbol": "path",
+        "description": "The Explorer prefers practical freedom, lower structure, and a quieter independent path. You learn from terrain, not from a curriculum, and you resist being over-defined.",
+        "preferences": [
+            "Variety and movement",
+            "Minimal bureaucracy",
+            "Learning by doing",
+        ],
+        "strengths": [
+            "Adapting when the plan collapses",
+            "Noticing what is actually happening on the ground",
+            "Protecting personal freedom without needing an audience",
+        ],
+        "growth_areas": [
+            "Committing long enough for skill to compound",
+            "Letting selected people depend on you",
+            "Building just enough structure that freedom survives busy seasons",
+        ],
+        "communication": "Spare and experiential. You may under-explain inner life and over-index on what you did.",
+        "leadership": "You may lead by scouting. Teams need a breadcrumb trail if they are going to follow.",
+        "relationships": "You offer adventure and honesty. Others may need more scheduled closeness than feels natural.",
+        "work_environment": "Field work, independent contracting, operations in motion, or roles with changing conditions.",
+        "reflections": [
+            "Which commitment would make my freedom more meaningful, not less?",
+            "What am I calling freedom that is actually avoidance of being known?",
+        ],
+        "exercises": [
+            "Keep one recurring ritual for 30 days.",
+            "Tell one person the unpolished reason you want to leave or stay.",
+        ],
+    },
+    "organizer": {
+        "slug": "organizer",
+        "name": "The Organizer",
+        "tagline": "Turns care into a system people can actually use.",
+        "palette": {"primary": "#1E40AF", "accent": "#93C5FD"},
+        "symbol": "ledger",
+        "description": "The Organizer is practical, structured, reserved, and considerate. You make life work for other people by putting pieces in place before they are missed.",
+        "preferences": [
+            "Predictable rhythms",
+            "Clear ownership",
+            "Help that is useful rather than dramatic",
+        ],
+        "strengths": [
+            "Anticipating logistical failure",
+            "Keeping promises without requiring applause",
+            "Creating order that reduces other people's stress",
+        ],
+        "growth_areas": [
+            "Asking for help before resentment builds",
+            "Allowing a little mess where creativity needs it",
+            "Not treating every change as a threat to quality",
+        ],
+        "communication": "Concrete, sequential, and responsible. You may understate your own needs.",
+        "leadership": "You may lead by making the machine run. Remember to name the purpose, not only the checklist.",
+        "relationships": "You show love through reliability. Partners may still need words and play, not only a well-run household or team.",
+        "work_environment": "Operations, program management, administration, healthcare logistics, education support.",
+        "reflections": [
+            "What would I stop doing if I trusted other people 10% more?",
+            "Where is order serving people, and where is it serving my anxiety?",
+        ],
+        "exercises": [
+            "Delegate one recurring task and do not take it back for two weeks.",
+            "Schedule unstructured time and protect it like a meeting.",
+        ],
+    },
+    "advocate": {
+        "slug": "advocate",
+        "name": "The Advocate",
+        "tagline": "Stands with people who would otherwise go unheard.",
+        "palette": {"primary": "#9F1239", "accent": "#FB7185"},
+        "symbol": "banner",
+        "description": "The Advocate is warm, relatively unstructured, and more reserved than evangelical. You notice injustice or unmet need and feel responsible to respond, often one relationship at a time.",
+        "preferences": [
+            "Work with a moral through-line",
+            "Small groups where honesty is possible",
+            "Flexibility to respond to the person in front of you",
+        ],
+        "strengths": [
+            "Seeing the human consequence of a policy",
+            "Staying with someone in difficulty",
+            "Speaking for fairness even when it is inconvenient",
+        ],
+        "growth_areas": [
+            "Boundaries so compassion does not become depletion",
+            "Choosing a few fights instead of every fight",
+            "Accepting that not everyone wants to be rescued",
+        ],
+        "communication": "Values-led and personal. You may assume others share the same emotional data.",
+        "leadership": "You may lead from care. Pair advocacy with a sustainable plan and shared ownership.",
+        "relationships": "You are loyal and attuned. Watch for over-functioning and quiet scorekeeping.",
+        "work_environment": "Counseling-adjacent roles, community work, customer advocacy, people operations, mission-driven teams.",
+        "reflections": [
+            "Whose need am I meeting, and whose need am I avoiding in myself?",
+            "What would 'enough' look like this week?",
+        ],
+        "exercises": [
+            "Practice a kind no in writing before you say it.",
+            "Name one cause you will not take on this month.",
+        ],
+    },
+    "connector": {
+        "slug": "connector",
+        "name": "The Connector",
+        "tagline": "Builds the room where the right people find each other.",
+        "palette": {"primary": "#BE185D", "accent": "#F9A8D4"},
+        "symbol": "nodes",
+        "description": "The Connector is outgoing, structured, practical, and people-centered. You remember names, contexts, and who should talk to whom, and you like making a network feel like a neighborhood.",
+        "preferences": [
+            "Live interaction",
+            "Roles with a social purpose",
+            "Events, introductions, and follow-up",
+        ],
+        "strengths": [
+            "Making strangers into a working group",
+            "Keeping relationships warm over time",
+            "Translating between very different personalities",
+        ],
+        "growth_areas": [
+            "Solitude that is not just recovery from over-booking",
+            "Depth with a few people, not only breadth",
+            "Saying no to one more introduction",
+        ],
+        "communication": "Warm, fast, and inclusive. You may fill silence that someone else needed.",
+        "leadership": "You may lead through relationships. Document decisions so the network is not the only source of truth.",
+        "relationships": "You bring energy and belonging. Partners may need you to be unreachable sometimes — on purpose.",
+        "work_environment": "Community, sales with integrity, recruiting, partnership roles, campus or member organizations.",
+        "reflections": [
+            "Who knows the real me when I am not hosting?",
+            "Which relationship am I maintaining out of habit rather than care?",
+        ],
+        "exercises": [
+            "Have one conversation this week with no networking agenda.",
+            "Block a half-day with notifications off.",
+        ],
+    },
+    "diplomat": {
+        "slug": "diplomat",
+        "name": "The Diplomat",
+        "tagline": "Finds a livable path between competing truths.",
+        "palette": {"primary": "#4C1D95", "accent": "#A78BFA"},
+        "symbol": "bridge",
+        "description": "The Diplomat combines imagination and order with a quieter, considerate presence. You can hold more than one perspective and still produce a coherent next step.",
+        "preferences": [
+            "Thoughtful preparation",
+            "Respectful disagreement",
+            "Solutions that people can live with",
+        ],
+        "strengths": [
+            "De-escalating without erasing the issue",
+            "Writing or speaking in a way that both sides can hear",
+            "Building process that feels fair",
+        ],
+        "growth_areas": [
+            "Taking a stand before everyone is comfortable",
+            "Not mediating yourself out of your own needs",
+            "Moving from consensus-seeking to time-bounded decision",
+        ],
+        "communication": "Careful, qualifying, and fair-minded. Others may want a clearer recommendation.",
+        "leadership": "You may lead by facilitation. Facilitation still needs a decision and an owner.",
+        "relationships": "You keep peace. Make sure peace is not silence.",
+        "work_environment": "Policy, product, counseling, cross-functional program roles, education, stakeholder-heavy work.",
+        "reflections": [
+            "What am I smoothing over that needs a name?",
+            "If I could not keep everyone happy, what would I choose?",
+        ],
+        "exercises": [
+            "State your preference first, then the range of options.",
+            "Let a small conflict stay unresolved for 24 hours and observe the urge to fix it.",
+        ],
+    },
+    "builder": {
+        "slug": "builder",
+        "name": "The Builder",
+        "tagline": "Makes something durable that was only a sketch yesterday.",
+        "palette": {"primary": "#9A3412", "accent": "#FB923C"},
+        "symbol": "keystone",
+        "description": "The Builder is practical, structured, outgoing, and independently driven. You like visible progress, real materials or real metrics, and a team that ships.",
+        "preferences": [
+            "Tangible outcomes",
+            "Ownership",
+            "Fewer meetings, more making",
+        ],
+        "strengths": [
+            "Turning a vague goal into a sequence of work",
+            "Holding the line on quality at delivery",
+            "Motivating a group through momentum",
+        ],
+        "growth_areas": [
+            "Listening before laying the foundation",
+            "Leaving room for ideas that do not yet have a blueprint",
+            "Resting without needing to earn it",
+        ],
+        "communication": "Action-oriented and blunt in a useful way. Check that people felt included, not only assigned.",
+        "leadership": "You may lead from the front of the work. Delegation is how the building outlives you.",
+        "relationships": "You provide. Remember that presence is also a form of providing.",
+        "work_environment": "Engineering, operations, skilled trades, product delivery, entrepreneurship with a shipping culture.",
+        "reflections": [
+            "What am I building to avoid feeling something?",
+            "Who did I not consult because it would have slowed the pour?",
+        ],
+        "exercises": [
+            "Ask for a critique of the plan before you start.",
+            "Finish 30 minutes earlier than you think you should, twice this week.",
+        ],
+    },
+    "mentor": {
+        "slug": "mentor",
+        "name": "The Mentor",
+        "tagline": "Grows other people without needing to own their success.",
+        "palette": {"primary": "#134E4A", "accent": "#2DD4BF"},
+        "symbol": "lamp",
+        "description": "The Mentor sits at the high end of openness, conscientiousness, extraversion, and agreeableness. You like developing people, holding a standard, and staying in conversation while someone becomes more themselves.",
+        "preferences": [
+            "Teaching that changes behavior, not only knowledge",
+            "Long-horizon relationships",
+            "Work with a human development component",
+        ],
+        "strengths": [
+            "Seeing potential slightly ahead of the person",
+            "Giving feedback that is both kind and specific",
+            "Building rituals of growth",
+        ],
+        "growth_areas": [
+            "Allowing people to fail without rescuing",
+            "Receiving mentoring, not only offering it",
+            "Keeping your own goals from being displaced by everyone else's",
+        ],
+        "communication": "Encouraging, structured, and narrative. Watch for over-talking when the other person needs to think.",
+        "leadership": "You may lead as a coach. Coaching still requires decisions that not everyone will like.",
+        "relationships": "You are generous with attention. Make sure the relationship is mutual, not a classroom.",
+        "work_environment": "Education, coaching, leadership development, people management, community building.",
+        "reflections": [
+            "Where am I teaching to feel needed?",
+            "What do I want to learn that I have been too busy teaching to start?",
+        ],
+        "exercises": [
+            "Ask someone to mentor you in a skill you are average at.",
+            "In your next 1:1, speak 30% less than usual.",
+        ],
+    },
+    "investigator": {
+        "slug": "investigator",
+        "name": "The Investigator",
+        "tagline": "Follows a question until the easy answers fall away.",
+        "palette": {"primary": "#0C4A6E", "accent": "#38BDF8"},
+        "symbol": "lens",
+        "description": "The Investigator is intellectually curious, flexible, reserved, and independent. You disappear into a question, distrust slogans, and would rather be accurate than agreeable.",
+        "preferences": [
+            "Uninterrupted inquiry",
+            "Primary sources",
+            "The right to change your mind in public",
+        ],
+        "strengths": [
+            "Noticing the exception that ruins a tidy theory",
+            "Sustained curiosity",
+            "Intellectual honesty",
+        ],
+        "growth_areas": [
+            "Coming back with a conclusion others can use",
+            "Relationships that are not only shared interests",
+            "Body, sleep, and ordinary life as part of the method",
+        ],
+        "communication": "Question-heavy and precise. People may feel quizzed rather than met.",
+        "leadership": "You may lead by inquiry. Teams still need a call when the investigation could continue forever.",
+        "relationships": "Intimacy may start with ideas. Practice asking how someone feels, not only what they think.",
+        "work_environment": "Research, journalism, security, science, specialist consulting, any role that rewards being wrong first.",
+        "reflections": [
+            "What question am I using to postpone a decision?",
+            "Who gets my warmth, not only my mind?",
+        ],
+        "exercises": [
+            "Write the current best answer, including what would falsify it.",
+            "Have a conversation with no follow-up questions for five minutes — only reflections.",
+        ],
+    },
+    "creator": {
+        "slug": "creator",
+        "name": "The Creator",
+        "tagline": "Gives inner life a form other people can encounter.",
+        "palette": {"primary": "#6B21A8", "accent": "#E879F9"},
+        "symbol": "studio",
+        "description": "The Creator is imaginative, flexible, more private, and warm. You make meaning through craft — words, images, products, environments — and you need solitude to hear yourself.",
+        "preferences": [
+            "Unstructured time that is actually protected",
+            "A small audience of people who get it",
+            "Work with an aesthetic or expressive dimension",
+        ],
+        "strengths": [
+            "Original synthesis",
+            "Sensitivity to tone, beauty, and fit",
+            "Giving language to something others only felt",
+        ],
+        "growth_areas": [
+            "Sharing work before it feels ready",
+            "Money, distribution, and the unromantic half of a creative life",
+            "Not collapsing when feedback is clumsy",
+        ],
+        "communication": "Evocative and sometimes indirect. Others may need you to say the ask plainly.",
+        "leadership": "You may lead by taste and example. Make criteria explicit so people are not guessing.",
+        "relationships": "You offer depth and atmosphere. Partners may need more ordinary updates than your inner world supplies automatically.",
+        "work_environment": "Design, writing, research-creation, product craft, any role with a blank page.",
+        "reflections": [
+            "What would I make if no one impressive were watching?",
+            "Where am I hiding in revision?",
+        ],
+        "exercises": [
+            "Publish a small piece of work at 80% polish.",
+            "Ask for one piece of specific feedback and implement it.",
+        ],
+    },
+    "collaborator": {
+        "slug": "collaborator",
+        "name": "The Collaborator",
+        "tagline": "Makes the we stronger than the brightest I.",
+        "palette": {"primary": "#115E59", "accent": "#5EEAD4"},
+        "symbol": "table",
+        "description": "The Collaborator is practical, flexible, outgoing, and cooperative. You like being in the mix, sharing credit, and solving the problem that is in the room today.",
+        "preferences": [
+            "Team-based work",
+            "Friendly iteration",
+            "Roles where relationships are part of the job",
+        ],
+        "strengths": [
+            "Keeping morale and motion at the same time",
+            "Compromising without keeping a bitter ledger",
+            "Making other people better in real time",
+        ],
+        "growth_areas": [
+            "Holding a dissenting view when the group is rolling",
+            "Protecting individual craft from endless consensus",
+            "Not over-accommodating at your own expense",
+        ],
+        "communication": "Inclusive and verbal. Silence may feel like a problem you need to fix.",
+        "leadership": "You may lead as a peer. Sometimes the group needs a captain more than another teammate.",
+        "relationships": "You are easy to live with. Practice wanting something that is only yours.",
+        "work_environment": "Cross-functional teams, customer success, ensemble performing, community operations.",
+        "reflections": [
+            "What do I actually want, independent of the group?",
+            "Where did I say yes to keep the peace?",
+        ],
+        "exercises": [
+            "In a meeting, wait until two other people have spoken before you synthesize.",
+            "Make a personal decision this week without a poll.",
+        ],
+    },
+    "independent-thinker": {
+        "slug": "independent-thinker",
+        "name": "The Independent Thinker",
+        "tagline": "Keeps a private standard when the room wants a slogan.",
+        "palette": {"primary": "#1E293B", "accent": "#94A3B8"},
+        "symbol": "monolith",
+        "description": "The Independent Thinker is practical, structured, reserved, and self-directed. You trust your own evaluation, dislike being managed in the small things, and would rather be consistent than popular.",
+        "preferences": [
+            "Control over method",
+            "Quiet",
+            "Rules that make sense, not rules for their own sake",
+        ],
+        "strengths": [
+            "Resisting social contagion",
+            "Doing the unglamorous correct thing",
+            "Self-sufficiency",
+        ],
+        "growth_areas": [
+            "Letting trusted people influence you sooner",
+            "Signaling care, not only competence",
+            "Flexibility when the world refuses your outline",
+        ],
+        "communication": "Economical. People may fill in a colder story than you intend.",
+        "leadership": "You may lead by example and high standards. Explain the standard; do not assume it is obvious.",
+        "relationships": "You offer steadiness. Warmth may need to be scheduled until it is a habit.",
+        "work_environment": "Specialist individual-contributor roles, quality, finance, independent practice, any job with a clear personal craft.",
+        "reflections": [
+            "Where is independence actually isolation?",
+            "What would I do if I did not have to be the one who is right?",
+        ],
+        "exercises": [
+            "Ask for input on a decision you could make alone.",
+            "Offer an unsolicited specific appreciation.",
+        ],
+    },
+    "motivator": {
+        "slug": "motivator",
+        "name": "The Motivator",
+        "tagline": "Lights a fire under a stalled group — including yourself.",
+        "palette": {"primary": "#9A3412", "accent": "#FBBF24"},
+        "symbol": "flame",
+        "description": "The Motivator is practical, flexible, outgoing, and independently forceful. You push for action, raise energy, and dislike drifting. Harmony is optional; motion is not.",
+        "preferences": [
+            "Visible progress",
+            "Candid pep talks",
+            "Contests, launches, and moments that count",
+        ],
+        "strengths": [
+            "Breaking inertia",
+            "Speaking courage into a hesitant room",
+            "Recovering quickly after a miss",
+        ],
+        "growth_areas": [
+            "Not turning every moment into a performance",
+            "Listening for the person who cannot match your pace",
+            "Building systems so motivation is not the only fuel",
+        ],
+        "communication": "High volume, high certainty. Check whether people feel inspired or run over.",
+        "leadership": "You may lead by rallying. Rallying without a plan becomes noise.",
+        "relationships": "You bring heat and loyalty. Partners may need quiet companionship without a goal.",
+        "work_environment": "Sales, athletics, campaigning, founding, turnaround work, coaching for performance.",
+        "reflections": [
+            "Who have I been trying to motivate who actually needs rest?",
+            "What am I driving so I do not have to feel doubt?",
+        ],
+        "exercises": [
+            "Spend one hour with no agenda and no self-improvement.",
+            "Ask someone what kind of support they want before you pep-talk.",
+        ],
+    },
+}
+
+
+@dataclass(frozen=True)
+class ArchetypeMatch:
+    slug: str
+    name: str
+    pattern: str
+    distance: float
+    mixed: bool
+    leaning: dict[str, str]
+    secondary_slug: str | None
+
+
+def _pole(value: float) -> str:
+    if value >= HIGH_CUT:
+        return "H"
+    if value <= LOW_CUT:
+        return "L"
+    return "H" if value >= 3.0 else "L"
+
+
+def _leaning(value: float) -> str:
+    if value >= HIGH_CUT:
+        return "high"
+    if value <= LOW_CUT:
+        return "low"
+    if value >= 3.0:
+        return "leaning-high"
+    return "leaning-low"
+
+
+def pattern_from_means(means: dict[str, float]) -> tuple[str, dict[str, str], bool]:
+    order = ("openness", "conscientiousness", "extraversion", "agreeableness")
+    letters = []
+    leaning = {}
+    mixed = False
+    for trait in order:
+        value = float(means[trait])
+        letters.append(_pole(value))
+        leaning[trait] = _leaning(value)
+        if LOW_CUT < value < HIGH_CUT:
+            mixed = True
+    return "".join(letters), leaning, mixed
+
+
+def _hamming(a: str, b: str) -> int:
+    return sum(ch1 != ch2 for ch1, ch2 in zip(a, b, strict=True))
+
+
+def match_archetypes(means: dict[str, float]) -> ArchetypeMatch:
+    pattern, leaning, mixed = pattern_from_means(means)
+    primary_slug = ARCHETYPE_GRID[pattern]
+    ranked = sorted(
+        ARCHETYPE_GRID.items(),
+        key=lambda item: (_hamming(pattern, item[0]), item[1]),
+    )
+    secondary = ranked[1][1] if len(ranked) > 1 else None
+    if secondary == primary_slug:
+        secondary = ranked[2][1]
+    return ArchetypeMatch(
+        slug=primary_slug,
+        name=ARCHETYPES[primary_slug]["name"],
+        pattern=pattern,
+        distance=0.0,
+        mixed=mixed,
+        leaning=leaning,
+        secondary_slug=secondary,
+    )

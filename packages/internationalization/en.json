@@ -1,0 +1,11 @@
+{
+  "appName": "PersonalityDNA AI",
+  "tagline": "Discover Yourself. Understand Others. Transform Your Life.",
+  "nav": {
+    "home": "Home",
+    "discover": "Discover",
+    "coach": "AI Coach",
+    "growth": "Growth",
+    "profile": "Profile"
+  }
+}
