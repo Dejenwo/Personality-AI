@@ -28,11 +28,16 @@ It is **not** a finished commercial launch. Independent scientific, legal, and a
 
 ## Quick start
 
+Use **Python 3.12 or 3.13**. Python 3.14 can work with current dependencies, but older pins failed to build `pydantic-core` from source on Windows.
+
 ```bash
-# Backend
+# Backend (from the repo root)
 cd services/backend
-python3 -m venv .venv
+python3.12 -m venv .venv
+# Windows: py -3.12 -m venv .venv
 source .venv/bin/activate
+# Windows: .venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
 
