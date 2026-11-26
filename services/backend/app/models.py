@@ -56,7 +56,7 @@ class UserProfile(Base):
     bio: Mapped[str] = mapped_column(Text, default="")
     country: Mapped[str] = mapped_column(String(64), default="")
     timezone: Mapped[str] = mapped_column(String(64), default="UTC")
-    date_of_birth: Mapped[str | None] = mapped_column(String(10), nullable=True)
+    date_of_birth: Mapped[str] = mapped_column(String(10), nullable=True)
     occupation: Mapped[str] = mapped_column(String(120), default="")
     share_profile_public: Mapped[bool] = mapped_column(Boolean, default=False)
 
@@ -92,7 +92,7 @@ class ConsentRecord(Base):
     version: Mapped[str] = mapped_column(String(32), default="1.0")
     text_snapshot: Mapped[str] = mapped_column(Text, default="")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
-    revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    revoked_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=True)
 
     user: Mapped[User] = relationship(back_populates="consents")
 
@@ -117,8 +117,8 @@ class AssessmentSession(Base):
     status: Mapped[str] = mapped_column(String(32), default="in_progress")
     current_index: Mapped[int] = mapped_column(Integer, default=0)
     started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
-    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    result_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    completed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=True)
+    result_id: Mapped[str] = mapped_column(String(36), nullable=True)
 
 
 class AssessmentResponse(Base):
@@ -164,8 +164,8 @@ class Message(Base):
     conversation_id: Mapped[str] = mapped_column(ForeignKey("ai_conversations.id"), index=True)
     role: Mapped[str] = mapped_column(String(32))
     content: Mapped[str] = mapped_column(Text)
-    grounding: Mapped[dict[str, Any] | None] = mapped_column(JSON, nullable=True)
-    safety: Mapped[dict[str, Any] | None] = mapped_column(JSON, nullable=True)
+    grounding: Mapped[dict[str, Any]] = mapped_column(JSON, nullable=True)
+    safety: Mapped[dict[str, Any]] = mapped_column(JSON, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
 
@@ -189,7 +189,7 @@ class JournalEntry(Base):
     title: Mapped[str] = mapped_column(String(200), default="")
     body: Mapped[str] = mapped_column(Text)
     entry_type: Mapped[str] = mapped_column(String(32), default="reflection")
-    mood: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    mood: Mapped[int] = mapped_column(Integer, nullable=True)
     tags: Mapped[list[str]] = mapped_column(JSON, default=list)
     allow_ai: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
@@ -205,7 +205,7 @@ class Goal(Base):
     description: Mapped[str] = mapped_column(Text, default="")
     category: Mapped[str] = mapped_column(String(64), default="personal")
     status: Mapped[str] = mapped_column(String(32), default="active")
-    target_date: Mapped[str | None] = mapped_column(String(10), nullable=True)
+    target_date: Mapped[str] = mapped_column(String(10), nullable=True)
     progress: Mapped[int] = mapped_column(Integer, default=0)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
@@ -217,7 +217,7 @@ class Habit(Base):
     user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), index=True)
     name: Mapped[str] = mapped_column(String(200))
     cadence: Mapped[str] = mapped_column(String(32), default="daily")
-    reminder: Mapped[str | None] = mapped_column(String(16), nullable=True)
+    reminder: Mapped[str] = mapped_column(String(16), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
 
@@ -253,7 +253,7 @@ class DevelopmentProgress(Base):
     day: Mapped[int] = mapped_column(Integer)
     completed: Mapped[bool] = mapped_column(Boolean, default=False)
     reflection: Mapped[str] = mapped_column(Text, default="")
-    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    completed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=True)
 
 
 class RelationshipInvitation(Base):
@@ -262,13 +262,13 @@ class RelationshipInvitation(Base):
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
     inviter_id: Mapped[str] = mapped_column(ForeignKey("users.id"), index=True)
     invitee_email: Mapped[str] = mapped_column(String(320), index=True)
-    invitee_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    invitee_id: Mapped[str] = mapped_column(String(36), nullable=True)
     relationship_type: Mapped[str] = mapped_column(String(32), default="partner")
     status: Mapped[str] = mapped_column(String(32), default="pending")
     token: Mapped[str] = mapped_column(String(64), unique=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
-    accepted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    accepted_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=True)
+    revoked_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=True)
 
 
 class ReportRecord(Base):
@@ -291,7 +291,7 @@ class Subscription(Base):
     plan: Mapped[str] = mapped_column(String(32), default="free")
     status: Mapped[str] = mapped_column(String(32), default="active")
     provider: Mapped[str] = mapped_column(String(32), default="internal")
-    current_period_end: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    current_period_end: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=True)
     cancel_at_period_end: Mapped[bool] = mapped_column(Boolean, default=False)
 
     user: Mapped[User] = relationship(back_populates="subscription")
@@ -311,7 +311,7 @@ class PaymentEvent(Base):
     __tablename__ = "payment_events"
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
-    user_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    user_id: Mapped[str] = mapped_column(String(36), nullable=True)
     provider: Mapped[str] = mapped_column(String(32))
     event_type: Mapped[str] = mapped_column(String(64))
     payload: Mapped[dict[str, Any]] = mapped_column(JSON)
@@ -358,7 +358,7 @@ class Referral(Base):
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
     referrer_id: Mapped[str] = mapped_column(ForeignKey("users.id"), index=True)
     code: Mapped[str] = mapped_column(String(32), unique=True)
-    referred_email: Mapped[str | None] = mapped_column(String(320), nullable=True)
+    referred_email: Mapped[str] = mapped_column(String(320), nullable=True)
     status: Mapped[str] = mapped_column(String(32), default="issued")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
@@ -375,10 +375,10 @@ class AuditEvent(Base):
     __tablename__ = "audit_events"
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
-    actor_id: Mapped[str | None] = mapped_column(String(36), nullable=True, index=True)
+    actor_id: Mapped[str] = mapped_column(String(36), nullable=True, index=True)
     action: Mapped[str] = mapped_column(String(64))
     resource: Mapped[str] = mapped_column(String(64))
-    resource_id: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    resource_id: Mapped[str] = mapped_column(String(64), nullable=True)
     meta: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
@@ -387,9 +387,9 @@ class SecurityEvent(Base):
     __tablename__ = "security_events"
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
-    user_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    user_id: Mapped[str] = mapped_column(String(36), nullable=True)
     kind: Mapped[str] = mapped_column(String(64))
-    ip: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    ip: Mapped[str] = mapped_column(String(64), nullable=True)
     detail: Mapped[str] = mapped_column(Text, default="")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
@@ -417,7 +417,7 @@ class Feedback(Base):
     __tablename__ = "feedback"
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
-    user_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    user_id: Mapped[str] = mapped_column(String(36), nullable=True)
     category: Mapped[str] = mapped_column(String(32), default="general")
     message: Mapped[str] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
