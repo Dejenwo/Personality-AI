@@ -13,10 +13,10 @@ py -3.12 -m venv .venv
 
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
+uvicorn app.main:app --reload --port 8080
 pytest -q
 ```
 
 If a previous venv was created with Python 3.14 and install failed, delete `.venv` and recreate it.
 
-OpenAPI: http://localhost:8000/api/docs
+OpenAPI: http://localhost:8080/api/docs

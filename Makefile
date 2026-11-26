@@ -1,7 +1,7 @@
 .PHONY: backend test-backend web install-web
 
 backend:
-	cd services/backend && .venv/bin/uvicorn app.main:app --reload --port 8000
+	cd services/backend && .venv/bin/uvicorn app.main:app --reload --port 8080
 
 test-backend:
 	cd services/backend && .venv/bin/pytest -q

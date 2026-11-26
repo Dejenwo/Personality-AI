@@ -39,7 +39,7 @@ source .venv/bin/activate
 # Windows: .venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
+uvicorn app.main:app --reload --port 8080
 
 # Web (separate terminal)
 pnpm install
@@ -51,7 +51,7 @@ Open http://localhost:3000
 Demo user: `demo@personalitydna.ai` / `DemoPass123!`  
 Admin user: `admin@personalitydna.ai` / `DemoPass123!`
 
-API docs: http://localhost:8000/api/docs
+API docs: http://localhost:8080/api/docs
 
 ## Architecture
 

@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     app_debug: bool = True
     app_secret_key: str = "change-me-in-any-non-local-environment"
     app_base_url: str = "http://localhost:3000"
-    api_base_url: str = "http://localhost:8000"
+    api_base_url: str = "http://localhost:8080"
 
     database_url: str = "sqlite:///./data/personalitydna.db"
 

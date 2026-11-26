@@ -3,9 +3,9 @@ const REFRESH_KEY = "pdna_refresh_token";
 
 export function apiBase() {
   if (typeof window !== "undefined") {
-    return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+    return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
   }
-  return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+  return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 }
 
 export function getToken() {
