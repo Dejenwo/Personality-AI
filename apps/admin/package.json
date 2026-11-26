@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "echo 'Admin portal is served at http://localhost:3000/admin from apps/web (ADR-003).'"
+    "dev": "echo 'Admin portal is served at http://localhost:3001/admin from apps/web (ADR-003).'"
   }
 }

@@ -46,7 +46,7 @@ pnpm install
 pnpm --filter @personalitydna/web dev
 ```
 
-Open http://localhost:3000
+Open http://localhost:3001
 
 Demo user: `demo@personalitydna.ai` / `DemoPass123!`  
 Admin user: `admin@personalitydna.ai` / `DemoPass123!`

@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     app_env: str = "development"
     app_debug: bool = True
     app_secret_key: str = "change-me-in-any-non-local-environment"
-    app_base_url: str = "http://localhost:3000"
+    app_base_url: str = "http://localhost:3001"
     api_base_url: str = "http://localhost:8080"
 
     database_url: str = "sqlite:///./data/personalitydna.db"
@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     demo_user_email: str = "demo@personalitydna.ai"
     demo_user_password: str = "DemoPass123!"
 
-    cors_origins: str = "http://localhost:3000,http://localhost:8081,http://127.0.0.1:3000"
+    cors_origins: str = "http://localhost:3001,http://localhost:8081,http://127.0.0.1:3001"
 
     openai_api_key: str = ""
     openai_model: str = "gpt-4o-mini"
