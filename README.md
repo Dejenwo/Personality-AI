@@ -38,8 +38,8 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 # Windows: .venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8080
+python -m pip install -r requirements.txt
+python -m uvicorn app.main:app --reload --port 8080
 
 # Web (separate terminal)
 pnpm install

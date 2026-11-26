@@ -12,11 +12,13 @@ py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1
 
 python -m pip install --upgrade pip
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8080
-pytest -q
+python -m pip install -r requirements.txt
+python -m uvicorn app.main:app --reload --port 8080
+python -m pytest -q
 ```
 
 If a previous venv was created with Python 3.14 and install failed, delete `.venv` and recreate it.
+
+On Windows, do not run a bare `uvicorn` command. After `.venv\Scripts\activate`, `where uvicorn` often still points at global `Python312\Scripts\uvicorn.exe`, which does not see packages installed in `.venv`. Always use `python -m uvicorn` (or `services\backend\run.cmd`).
 
 OpenAPI: http://localhost:8080/api/docs

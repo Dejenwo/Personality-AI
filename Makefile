@@ -1,10 +1,10 @@
 .PHONY: backend test-backend web install-web
 
 backend:
-	cd services/backend && .venv/bin/uvicorn app.main:app --reload --port 8080
+	cd services/backend && .venv/bin/python -m uvicorn app.main:app --reload --port 8080
 
 test-backend:
-	cd services/backend && .venv/bin/pytest -q
+	cd services/backend && .venv/bin/python -m pytest -q
 
 install-web:
 	pnpm install
