@@ -46,7 +46,7 @@ pnpm install
 pnpm --filter @personalitydna/web dev
 ```
 
-Open http://localhost:3001
+Open http://localhost:3100 (web uses 3100, API uses 8080). If 3100 is busy: `pnpm --filter @personalitydna/web exec next dev --port 3200`
 
 Demo user: `demo@personalitydna.ai` / `DemoPass123!`  
 Admin user: `admin@personalitydna.ai` / `DemoPass123!`
