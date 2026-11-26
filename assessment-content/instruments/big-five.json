@@ -1,0 +1,512 @@
+{
+  "slug": "big-five",
+  "name": "Big Five Personality Assessment",
+  "short_name": "Big Five",
+  "version": "1.0.0",
+  "framework": "big_five",
+  "duration_minutes": 12,
+  "item_count": 50,
+  "is_free": true,
+  "tier": "free",
+  "category": "personality",
+  "description": "The 50-item IPIP Big-Five Factor Markers measuring Extraversion, Agreeableness, Conscientiousness, Emotional Stability, and Intellect/Imagination.",
+  "instructions": "Describe yourself as you generally are now, not as you wish to be in the future. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. Indicate for each statement whether it is 1. Very Inaccurate, 2. Moderately Inaccurate, 3. Neither Accurate Nor Inaccurate, 4. Moderately Accurate, or 5. Very Accurate as a description of you.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Very Inaccurate"
+    },
+    {
+      "value": 2,
+      "label": "Moderately Inaccurate"
+    },
+    {
+      "value": 3,
+      "label": "Neither Accurate Nor Inaccurate"
+    },
+    {
+      "value": 4,
+      "label": "Moderately Accurate"
+    },
+    {
+      "value": 5,
+      "label": "Very Accurate"
+    }
+  ],
+  "items": [
+    {
+      "id": "ipip50_01",
+      "text": "Am the life of the party.",
+      "trait": "extraversion",
+      "keyed": "+",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_02",
+      "text": "Feel little concern for others.",
+      "trait": "agreeableness",
+      "keyed": "-",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_03",
+      "text": "Am always prepared.",
+      "trait": "conscientiousness",
+      "keyed": "+",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_04",
+      "text": "Get stressed out easily.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_05",
+      "text": "Have a rich vocabulary.",
+      "trait": "openness",
+      "keyed": "+",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_06",
+      "text": "Don't talk a lot.",
+      "trait": "extraversion",
+      "keyed": "-",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_07",
+      "text": "Am interested in people.",
+      "trait": "agreeableness",
+      "keyed": "+",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_08",
+      "text": "Leave my belongings around.",
+      "trait": "conscientiousness",
+      "keyed": "-",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_09",
+      "text": "Am relaxed most of the time.",
+      "trait": "emotional_stability",
+      "keyed": "+",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_10",
+      "text": "Have difficulty understanding abstract ideas.",
+      "trait": "openness",
+      "keyed": "-",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_11",
+      "text": "Feel comfortable around people.",
+      "trait": "extraversion",
+      "keyed": "+",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_12",
+      "text": "Insult people.",
+      "trait": "agreeableness",
+      "keyed": "-",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_13",
+      "text": "Pay attention to details.",
+      "trait": "conscientiousness",
+      "keyed": "+",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_14",
+      "text": "Worry about things.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_15",
+      "text": "Have a vivid imagination.",
+      "trait": "openness",
+      "keyed": "+",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_16",
+      "text": "Keep in the background.",
+      "trait": "extraversion",
+      "keyed": "-",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_17",
+      "text": "Sympathize with others' feelings.",
+      "trait": "agreeableness",
+      "keyed": "+",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_18",
+      "text": "Make a mess of things.",
+      "trait": "conscientiousness",
+      "keyed": "-",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_19",
+      "text": "Seldom feel blue.",
+      "trait": "emotional_stability",
+      "keyed": "+",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_20",
+      "text": "Am not interested in abstract ideas.",
+      "trait": "openness",
+      "keyed": "-",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_21",
+      "text": "Start conversations.",
+      "trait": "extraversion",
+      "keyed": "+",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_22",
+      "text": "Am not interested in other people's problems.",
+      "trait": "agreeableness",
+      "keyed": "-",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_23",
+      "text": "Get chores done right away.",
+      "trait": "conscientiousness",
+      "keyed": "+",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_24",
+      "text": "Am easily disturbed.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_25",
+      "text": "Have excellent ideas.",
+      "trait": "openness",
+      "keyed": "+",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_26",
+      "text": "Have little to say.",
+      "trait": "extraversion",
+      "keyed": "-",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_27",
+      "text": "Have a soft heart.",
+      "trait": "agreeableness",
+      "keyed": "+",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_28",
+      "text": "Often forget to put things back in their proper place.",
+      "trait": "conscientiousness",
+      "keyed": "-",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_29",
+      "text": "Get upset easily.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_30",
+      "text": "Do not have a good imagination.",
+      "trait": "openness",
+      "keyed": "-",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_31",
+      "text": "Talk to a lot of different people at parties.",
+      "trait": "extraversion",
+      "keyed": "+",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_32",
+      "text": "Am not really interested in others.",
+      "trait": "agreeableness",
+      "keyed": "-",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_33",
+      "text": "Like order.",
+      "trait": "conscientiousness",
+      "keyed": "+",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_34",
+      "text": "Change my mood a lot.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_35",
+      "text": "Am quick to understand things.",
+      "trait": "openness",
+      "keyed": "+",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_36",
+      "text": "Don't like to draw attention to myself.",
+      "trait": "extraversion",
+      "keyed": "-",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_37",
+      "text": "Take time out for others.",
+      "trait": "agreeableness",
+      "keyed": "+",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_38",
+      "text": "Shirk my duties.",
+      "trait": "conscientiousness",
+      "keyed": "-",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_39",
+      "text": "Have frequent mood swings.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_40",
+      "text": "Use difficult words.",
+      "trait": "openness",
+      "keyed": "+",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_41",
+      "text": "Don't mind being the center of attention.",
+      "trait": "extraversion",
+      "keyed": "+",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_42",
+      "text": "Feel others' emotions.",
+      "trait": "agreeableness",
+      "keyed": "+",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_43",
+      "text": "Follow a schedule.",
+      "trait": "conscientiousness",
+      "keyed": "+",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_44",
+      "text": "Get irritated easily.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_45",
+      "text": "Spend time reflecting on things.",
+      "trait": "openness",
+      "keyed": "+",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_46",
+      "text": "Am quiet around strangers.",
+      "trait": "extraversion",
+      "keyed": "-",
+      "facet": "extraversion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_47",
+      "text": "Make people feel at ease.",
+      "trait": "agreeableness",
+      "keyed": "+",
+      "facet": "agreeableness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_48",
+      "text": "Am exacting in my work.",
+      "trait": "conscientiousness",
+      "keyed": "+",
+      "facet": "conscientiousness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_49",
+      "text": "Often feel blue.",
+      "trait": "emotional_stability",
+      "keyed": "-",
+      "facet": "emotional_stability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "ipip50_50",
+      "text": "Am full of ideas.",
+      "trait": "openness",
+      "keyed": "+",
+      "facet": "openness",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.9,
+    "max_missing": 5
+  },
+  "scientific": {
+    "instrument_name": "IPIP Big-Five Factor Markers (50-item)",
+    "original_authors": "Lewis R. Goldberg; items hosted by the International Personality Item Pool",
+    "primary_citation": "Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. Psychological Assessment, 4(1), 26\u201342. https://doi.org/10.1037/1040-3590.4.1.26",
+    "item_source": "https://ipip.ori.org/newBigFive5broadKey.htm",
+    "administration_notes": "https://ipip.ori.org/new_ipip-50-item-scale.htm",
+    "scoring_notes": "https://ipip.ori.org/newScoringInstructions.htm",
+    "permission": "Public domain. Permission is granted to use IPIP items for any purpose, commercial or non-commercial. https://ipip.ori.org/newPermission.htm",
+    "reported_alpha_10_item": {
+      "extraversion": 0.87,
+      "agreeableness": 0.82,
+      "conscientiousness": 0.79,
+      "emotional_stability": 0.86,
+      "intellect_or_imagination": 0.84
+    },
+    "alpha_source": "https://ipip.ori.org/newBigFive5broadKey.htm (retrieved 2026-11-26)",
+    "intended_population": "Adults; originally studied in research samples. Not validated here for clinical diagnosis or employment selection.",
+    "limitations": "Self-report is influenced by current mood, self-knowledge, and social desirability. Alpha values come from IPIP documentation, not from PersonalityDNA AI samples. Cultural transportability of item wording is not assumed. Scores are not population percentiles.",
+    "validation_status": "research_backed_public_domain"
+  }
+}

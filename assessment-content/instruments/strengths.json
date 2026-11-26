@@ -1,0 +1,154 @@
+{
+  "slug": "strengths",
+  "name": "Personal Strengths Reflection",
+  "short_name": "Strengths",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": true,
+  "tier": "free",
+  "category": "strengths",
+  "description": "Self-perceived strengths for development planning. Not CliftonStrengths and not a talent assessment.",
+  "instructions": "Rate how often other people and your own experience would support each statement.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "str_01",
+      "text": "People rely on me to notice patterns others miss.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "insight",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_02",
+      "text": "I can stay calm and organized when plans change.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "steadiness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_03",
+      "text": "I help groups include quieter voices.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "inclusion",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_04",
+      "text": "I finish what I start even when the novelty wears off.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "follow_through",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_05",
+      "text": "I generate many options when a problem looks stuck.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "ideation",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_06",
+      "text": "I can explain a complex idea in plain language.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "clarity",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_07",
+      "text": "I recover quickly and help others regain perspective.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "resilience",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_08",
+      "text": "I hold a high bar for quality in my own work.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "craft",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_09",
+      "text": "I build trust by doing what I said I would do.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "reliability",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_10",
+      "text": "I am willing to ask the uncomfortable but necessary question.",
+      "trait": "strengths",
+      "keyed": "+",
+      "facet": "courage",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_11",
+      "text": "I lose interest once a problem is no longer new.",
+      "trait": "strengths",
+      "keyed": "-",
+      "facet": "follow_through",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "str_12",
+      "text": "I struggle to notice my own strengths without outside feedback.",
+      "trait": "strengths",
+      "keyed": "-",
+      "facet": "insight",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Strengths Reflection",
+    "validation_status": "original_unvalidated"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "slug": "motivation",
+  "name": "Motivation Preferences",
+  "short_name": "Motivation",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": false,
+  "tier": "premium",
+  "category": "motivation",
+  "description": "How you tend to start, sustain, and recover motivation for personal goals.",
+  "instructions": "Think about recent goals, not an idealized version of yourself.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "mot_01",
+      "text": "I work hardest when a goal is personally meaningful.",
+      "trait": "motivation",
+      "keyed": "+",
+      "facet": "purpose",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_02",
+      "text": "Clear deadlines help me start even when I do not feel ready.",
+      "trait": "motivation",
+      "keyed": "+",
+      "facet": "structure",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_03",
+      "text": "Friendly accountability from other people keeps me moving.",
+      "trait": "motivation",
+      "keyed": "+",
+      "facet": "social",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_04",
+      "text": "I am motivated by tracking visible progress.",
+      "trait": "motivation",
+      "keyed": "+",
+      "facet": "progress",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_05",
+      "text": "Curiosity is usually enough to keep me engaged.",
+      "trait": "motivation",
+      "keyed": "+",
+      "facet": "curiosity",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_06",
+      "text": "I lose energy when a task feels purely obligatory.",
+      "trait": "motivation",
+      "keyed": "-",
+      "facet": "purpose",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_07",
+      "text": "Open-ended projects without milestones are hard for me to finish.",
+      "trait": "motivation",
+      "keyed": "-",
+      "facet": "structure",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_08",
+      "text": "I prefer working privately without anyone checking in.",
+      "trait": "motivation",
+      "keyed": "-",
+      "facet": "social",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_09",
+      "text": "I can stay motivated even when progress is slow and invisible.",
+      "trait": "motivation",
+      "keyed": "-",
+      "facet": "progress",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_10",
+      "text": "I need external pressure to finish uninteresting work.",
+      "trait": "motivation",
+      "keyed": "+",
+      "facet": "external",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_11",
+      "text": "I rebound quickly after a setback if I can adjust the plan.",
+      "trait": "motivation",
+      "keyed": "+",
+      "facet": "resilience",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "mot_12",
+      "text": "A single failure can make me postpone a goal for a long time.",
+      "trait": "motivation",
+      "keyed": "-",
+      "facet": "resilience",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Motivation Preferences Inventory",
+    "validation_status": "original_unvalidated"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "slug": "communication",
+  "name": "Communication Preferences",
+  "short_name": "Communication",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": true,
+  "tier": "free",
+  "category": "communication",
+  "description": "An original inventory of preferred communication habits for self-reflection. Not a clinical communication disorder screen.",
+  "instructions": "Indicate how well each statement describes your typical communication in everyday work and personal life.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "comm_01",
+      "text": "I usually share my thoughts as soon as they form.",
+      "trait": "communication",
+      "keyed": "+",
+      "facet": "directness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_02",
+      "text": "I prefer to think quietly before I speak.",
+      "trait": "communication",
+      "keyed": "-",
+      "facet": "directness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_03",
+      "text": "I like conversations that stay on a practical outcome.",
+      "trait": "communication",
+      "keyed": "+",
+      "facet": "structure",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_04",
+      "text": "I enjoy conversations that wander into new ideas.",
+      "trait": "communication",
+      "keyed": "-",
+      "facet": "structure",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_05",
+      "text": "I check how the other person may feel before I respond.",
+      "trait": "communication",
+      "keyed": "+",
+      "facet": "empathy",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_06",
+      "text": "I focus first on the facts, even when emotions are high.",
+      "trait": "communication",
+      "keyed": "-",
+      "facet": "empathy",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_07",
+      "text": "I am comfortable raising disagreement in a group.",
+      "trait": "communication",
+      "keyed": "+",
+      "facet": "assertiveness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_08",
+      "text": "I often wait for someone else to name a conflict.",
+      "trait": "communication",
+      "keyed": "-",
+      "facet": "assertiveness",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_09",
+      "text": "Written messages help me communicate more clearly than live talk.",
+      "trait": "communication",
+      "keyed": "+",
+      "facet": "channel",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_10",
+      "text": "I do my best thinking out loud with other people.",
+      "trait": "communication",
+      "keyed": "-",
+      "facet": "channel",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_11",
+      "text": "I summarize agreements at the end of an important conversation.",
+      "trait": "communication",
+      "keyed": "+",
+      "facet": "closure",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "comm_12",
+      "text": "I am comfortable leaving a discussion open-ended.",
+      "trait": "communication",
+      "keyed": "-",
+      "facet": "closure",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Communication Preferences Inventory",
+    "validation_status": "original_unvalidated",
+    "limitations": "Constructed for product education. Independent reliability and validity evidence has not been collected."
+  }
+}

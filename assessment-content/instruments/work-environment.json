@@ -1,0 +1,154 @@
+{
+  "slug": "work-environment",
+  "name": "Work Environment Preferences",
+  "short_name": "Work Environment",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": false,
+  "tier": "premium",
+  "category": "career",
+  "description": "Preferred conditions for doing good work. Not a job-performance predictor.",
+  "instructions": "Rate the environment in which you usually do your best work.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "work_01",
+      "text": "I do my best work with long stretches of quiet focus.",
+      "trait": "work_environment",
+      "keyed": "+",
+      "facet": "focus",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_02",
+      "text": "I am energized by a busy, social workplace.",
+      "trait": "work_environment",
+      "keyed": "-",
+      "facet": "focus",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_03",
+      "text": "I prefer clear roles and documented expectations.",
+      "trait": "work_environment",
+      "keyed": "+",
+      "facet": "clarity",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_04",
+      "text": "I like fluid roles that change with the problem.",
+      "trait": "work_environment",
+      "keyed": "-",
+      "facet": "clarity",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_05",
+      "text": "Remote or asynchronous work suits me well.",
+      "trait": "work_environment",
+      "keyed": "+",
+      "facet": "remote",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_06",
+      "text": "I prefer being in the same room as my collaborators.",
+      "trait": "work_environment",
+      "keyed": "-",
+      "facet": "remote",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_07",
+      "text": "I want a manager who coaches more than directs.",
+      "trait": "work_environment",
+      "keyed": "+",
+      "facet": "coaching_culture",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_08",
+      "text": "I want a manager who makes decisions quickly and clearly.",
+      "trait": "work_environment",
+      "keyed": "-",
+      "facet": "coaching_culture",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_09",
+      "text": "I like a high degree of autonomy over my calendar.",
+      "trait": "work_environment",
+      "keyed": "+",
+      "facet": "autonomy",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_10",
+      "text": "I like a shared team rhythm with standing meetings.",
+      "trait": "work_environment",
+      "keyed": "-",
+      "facet": "autonomy",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_11",
+      "text": "A mission I believe in matters more than prestige.",
+      "trait": "work_environment",
+      "keyed": "+",
+      "facet": "mission",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "work_12",
+      "text": "I am motivated by a high-status, competitive environment.",
+      "trait": "work_environment",
+      "keyed": "-",
+      "facet": "mission",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Work Environment Inventory",
+    "validation_status": "original_unvalidated"
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "slug": "career-interests",
+  "name": "Career Interests",
+  "short_name": "Career",
+  "version": "1.0.0",
+  "framework": "riasec_inspired",
+  "duration_minutes": 8,
+  "item_count": 24,
+  "is_free": false,
+  "tier": "premium",
+  "category": "career",
+  "description": "Original interest items organized around Holland's RIASEC themes for exploration only. This is not the O*NET Interest Profiler and is not a measure of skill.",
+  "instructions": "Rate how much you would like each kind of activity, whether or not you have experience or training.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Dislike"
+    },
+    {
+      "value": 2,
+      "label": "Dislike"
+    },
+    {
+      "value": 3,
+      "label": "Unsure"
+    },
+    {
+      "value": 4,
+      "label": "Like"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Like"
+    }
+  ],
+  "items": [
+    {
+      "id": "riasec_01",
+      "text": "Building, repairing, or working with physical materials.",
+      "trait": "realistic",
+      "keyed": "+",
+      "facet": "realistic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_02",
+      "text": "Using tools, machines, or outdoor settings in my work.",
+      "trait": "realistic",
+      "keyed": "+",
+      "facet": "realistic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_03",
+      "text": "Solving a technical or scientific puzzle.",
+      "trait": "investigative",
+      "keyed": "+",
+      "facet": "investigative",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_04",
+      "text": "Researching a question until I understand how something works.",
+      "trait": "investigative",
+      "keyed": "+",
+      "facet": "investigative",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_05",
+      "text": "Designing, writing, performing, or creating original work.",
+      "trait": "artistic",
+      "keyed": "+",
+      "facet": "artistic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_06",
+      "text": "Expressing ideas through images, stories, or music.",
+      "trait": "artistic",
+      "keyed": "+",
+      "facet": "artistic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_07",
+      "text": "Teaching, counseling, or supporting other people.",
+      "trait": "social",
+      "keyed": "+",
+      "facet": "social",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_08",
+      "text": "Helping a group learn or work through a personal challenge.",
+      "trait": "social",
+      "keyed": "+",
+      "facet": "social",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_09",
+      "text": "Persuading, selling, or starting a new initiative.",
+      "trait": "enterprising",
+      "keyed": "+",
+      "facet": "enterprising",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_10",
+      "text": "Leading a project that needs energy and influence.",
+      "trait": "enterprising",
+      "keyed": "+",
+      "facet": "enterprising",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_11",
+      "text": "Organizing records, schedules, or reliable systems.",
+      "trait": "conventional",
+      "keyed": "+",
+      "facet": "conventional",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_12",
+      "text": "Working with clear procedures, data, or quality checks.",
+      "trait": "conventional",
+      "keyed": "+",
+      "facet": "conventional",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_13",
+      "text": "Working mostly with ideas rather than physical tools.",
+      "trait": "realistic",
+      "keyed": "-",
+      "facet": "realistic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_14",
+      "text": "Making decisions from intuition instead of analysis.",
+      "trait": "investigative",
+      "keyed": "-",
+      "facet": "investigative",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_15",
+      "text": "Following a fixed template with little room for originality.",
+      "trait": "artistic",
+      "keyed": "-",
+      "facet": "artistic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_16",
+      "text": "Working independently with little contact with other people.",
+      "trait": "social",
+      "keyed": "-",
+      "facet": "social",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_17",
+      "text": "Avoiding roles that require influencing or selling.",
+      "trait": "enterprising",
+      "keyed": "-",
+      "facet": "enterprising",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_18",
+      "text": "Working in a setting with few rules or predictable routines.",
+      "trait": "conventional",
+      "keyed": "-",
+      "facet": "conventional",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_19",
+      "text": "Maintaining equipment or a physical environment.",
+      "trait": "realistic",
+      "keyed": "+",
+      "facet": "realistic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_20",
+      "text": "Reading research or technical material in my free time.",
+      "trait": "investigative",
+      "keyed": "+",
+      "facet": "investigative",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_21",
+      "text": "Inventing a new way to present an idea.",
+      "trait": "artistic",
+      "keyed": "+",
+      "facet": "artistic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_22",
+      "text": "Listening carefully so I can help someone else succeed.",
+      "trait": "social",
+      "keyed": "+",
+      "facet": "social",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_23",
+      "text": "Pitching an idea and rallying people around it.",
+      "trait": "enterprising",
+      "keyed": "+",
+      "facet": "enterprising",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "riasec_24",
+      "text": "Keeping information accurate, ordered, and easy to find.",
+      "trait": "conventional",
+      "keyed": "+",
+      "facet": "conventional",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 3
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Career Interest Explorer",
+    "theoretical_basis": "Holland, J. L. (1997). Making vocational choices (3rd ed.). Psychological Assessment Resources. Theory only; items are original.",
+    "not_used": "O*NET Interest Profiler items were not copied. O*NET Career Exploration Tools have separate licenses (CC BY-ND 4.0 or Developer License) requiring attribution and, if modified, validation.",
+    "validation_status": "original_unvalidated",
+    "limitations": "Interests are not demonstrated competence. Not for hiring eligibility."
+  }
+}

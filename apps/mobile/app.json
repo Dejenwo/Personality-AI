@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "PersonalityDNA AI",
+    "slug": "personality-dna-ai",
+    "scheme": "personalitydna",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": { "bundleIdentifier": "com.personalitydna.ai", "supportsTablet": true },
+    "android": { "package": "com.personalitydna.ai" },
+    "plugins": ["expo-router", "expo-secure-store"]
+  }
+}

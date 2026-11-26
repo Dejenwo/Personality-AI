@@ -1,0 +1,155 @@
+{
+  "slug": "leadership",
+  "name": "Leadership Preferences",
+  "short_name": "Leadership",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": false,
+  "tier": "premium",
+  "category": "leadership",
+  "description": "Educational inventory of leadership preferences. Not a measure of leadership ability and not for hiring or promotion decisions.",
+  "instructions": "Think about how you prefer to lead or contribute when a group needs direction.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "lead_01",
+      "text": "I like setting a long-range direction for a group.",
+      "trait": "leadership",
+      "keyed": "+",
+      "facet": "strategic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_02",
+      "text": "I prefer improving today's process over debating future vision.",
+      "trait": "leadership",
+      "keyed": "-",
+      "facet": "strategic",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_03",
+      "text": "I make decisions faster when I can hear several viewpoints first.",
+      "trait": "leadership",
+      "keyed": "+",
+      "facet": "collaborative",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_04",
+      "text": "I would rather decide independently and then explain the choice.",
+      "trait": "leadership",
+      "keyed": "-",
+      "facet": "collaborative",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_05",
+      "text": "I enjoy helping other people grow their skills.",
+      "trait": "leadership",
+      "keyed": "+",
+      "facet": "coaching",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_06",
+      "text": "I would rather complete the work myself than coach someone through it.",
+      "trait": "leadership",
+      "keyed": "-",
+      "facet": "coaching",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_07",
+      "text": "I am comfortable assigning ownership and stepping back.",
+      "trait": "leadership",
+      "keyed": "+",
+      "facet": "delegation",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_08",
+      "text": "I stay closely involved in the details of work I am responsible for.",
+      "trait": "leadership",
+      "keyed": "-",
+      "facet": "delegation",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_09",
+      "text": "I prefer a clear decision owner, even when the choice is unpopular.",
+      "trait": "leadership",
+      "keyed": "+",
+      "facet": "decision",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_10",
+      "text": "I prefer waiting until a group is close to consensus.",
+      "trait": "leadership",
+      "keyed": "-",
+      "facet": "decision",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_11",
+      "text": "I address tension in a team promptly and directly.",
+      "trait": "leadership",
+      "keyed": "+",
+      "facet": "conflict",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "lead_12",
+      "text": "I try to keep harmony until a conflict becomes unavoidable.",
+      "trait": "leadership",
+      "keyed": "-",
+      "facet": "conflict",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Leadership Preferences Inventory",
+    "validation_status": "original_unvalidated",
+    "limitations": "Preferences are not competencies. Must not be used for automated employment decisions."
+  }
+}

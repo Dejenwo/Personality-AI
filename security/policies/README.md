@@ -1,0 +1,1 @@
+See `docs/SECURITY_ARCHITECTURE.md` and `docs/PRIVACY_REQUIREMENTS.md`.

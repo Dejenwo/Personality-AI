@@ -1,0 +1,154 @@
+{
+  "slug": "decision-making",
+  "name": "Decision-Making Preferences",
+  "short_name": "Decisions",
+  "version": "1.0.0",
+  "framework": "original",
+  "duration_minutes": 6,
+  "item_count": 12,
+  "is_free": false,
+  "tier": "premium",
+  "category": "cognition",
+  "description": "Preferred decision habits under ordinary conditions. Not a cognitive ability test.",
+  "instructions": "Rate how you typically make important but non-emergency decisions.",
+  "scale": [
+    {
+      "value": 1,
+      "label": "Strongly Disagree"
+    },
+    {
+      "value": 2,
+      "label": "Disagree"
+    },
+    {
+      "value": 3,
+      "label": "Neither Agree Nor Disagree"
+    },
+    {
+      "value": 4,
+      "label": "Agree"
+    },
+    {
+      "value": 5,
+      "label": "Strongly Agree"
+    }
+  ],
+  "items": [
+    {
+      "id": "dec_01",
+      "text": "I gather substantial information before I commit.",
+      "trait": "decision_making",
+      "keyed": "+",
+      "facet": "deliberation",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_02",
+      "text": "I am comfortable deciding with incomplete information.",
+      "trait": "decision_making",
+      "keyed": "-",
+      "facet": "deliberation",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_03",
+      "text": "I weigh how a decision may affect other people.",
+      "trait": "decision_making",
+      "keyed": "+",
+      "facet": "people",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_04",
+      "text": "I prioritize the most logical option even if it is unpopular.",
+      "trait": "decision_making",
+      "keyed": "-",
+      "facet": "people",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_05",
+      "text": "I like comparing several alternatives side by side.",
+      "trait": "decision_making",
+      "keyed": "+",
+      "facet": "options",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_06",
+      "text": "I prefer a simple default and rarely revisit it.",
+      "trait": "decision_making",
+      "keyed": "-",
+      "facet": "options",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_07",
+      "text": "I sleep on important decisions when I can.",
+      "trait": "decision_making",
+      "keyed": "+",
+      "facet": "pace",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_08",
+      "text": "I decide quickly and adjust later if needed.",
+      "trait": "decision_making",
+      "keyed": "-",
+      "facet": "pace",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_09",
+      "text": "I look for a reversible experiment instead of a permanent choice.",
+      "trait": "decision_making",
+      "keyed": "+",
+      "facet": "reversibility",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_10",
+      "text": "Once I choose, I prefer not to reopen the decision.",
+      "trait": "decision_making",
+      "keyed": "-",
+      "facet": "reversibility",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_11",
+      "text": "I explicitly name the trade-off I am accepting.",
+      "trait": "decision_making",
+      "keyed": "+",
+      "facet": "tradeoffs",
+      "min_value": 1,
+      "max_value": 5
+    },
+    {
+      "id": "dec_12",
+      "text": "I try to find an option that avoids trade-offs altogether.",
+      "trait": "decision_making",
+      "keyed": "-",
+      "facet": "tradeoffs",
+      "min_value": 1,
+      "max_value": 5
+    }
+  ],
+  "completion_rule": {
+    "min_answered_ratio": 0.85,
+    "max_missing": 2
+  },
+  "scientific": {
+    "instrument_name": "PersonalityDNA Decision Preferences Inventory",
+    "validation_status": "original_unvalidated"
+  }
+}

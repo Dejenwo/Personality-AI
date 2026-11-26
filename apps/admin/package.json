@@ -1,0 +1,8 @@
+{
+  "name": "@personalitydna/admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Admin portal is served at http://localhost:3100/admin from apps/web (ADR-003).'"
+  }
+}
