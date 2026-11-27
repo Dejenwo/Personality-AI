@@ -15,11 +15,14 @@ export default function GrowthPage() {
     api<any[]>("/api/v1/goals").then(setGoals);
   }, []);
   return (
-    <AppShell title="Growth">
+    <AppShell title="My Growth">
       <div className="grid gap-4 md:grid-cols-3">
         <Link className="card" href="/app/habits">Habits · {habits.length}</Link>
         <Link className="card" href="/app/goals">Goals · {goals.length}</Link>
         <Link className="card" href="/app/journal">Journal</Link>
+        <Link className="card" href="/app/blueprint">Life Blueprint</Link>
+        <Link className="card" href="/app/encyclopedia">Encyclopedia</Link>
+        <Link className="card" href="/app/profile">Profile and privacy</Link>
       </div>
       <h2 className="font-display mt-8 text-2xl">Development academy</h2>
       <div className="mt-4 grid gap-4 md:grid-cols-2">

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from io import BytesIO
 from typing import Any
 
@@ -17,9 +18,13 @@ def build_report_payload(user: dict[str, Any], result: dict[str, Any], report_ty
         "title": {
             "comprehensive": "Comprehensive Personality Profile",
             "big-five": "Big Five Personality Traits",
-            "career": "Career Exploration Report",
+            "career": "Career Intelligence Report",
             "relationship": "Relationship Communication Report",
             "leadership": "Leadership Development Report",
+            "marriage": "Marriage Preparation Report",
+            "development": "Personal Development Report",
+            "blueprint": "My Life Blueprint",
+            "who-you-are": "Understanding Who You Are",
         }.get(report_type, "PersonalityDNA Report"),
         "user": {"display_name": user.get("display_name"), "email": user.get("email")},
         "archetype": archetype,
@@ -70,6 +75,19 @@ def render_pdf(payload: dict[str, Any]) -> bytes:
             Spacer(1, 6),
             Paragraph(f"{score.get('name', trait)} — mean {score.get('mean')}", styles["Heading3"]),
             Paragraph(score.get("explanation", ""), styles["BodyText"]),
+        ]
+    for section in payload.get("sections") or []:
+        raw = section.get("content", "")
+        text = raw if isinstance(raw, str) else json.dumps(raw, default=str)[:3500]
+        text = (
+            text.replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+        )
+        story += [
+            Spacer(1, 8),
+            Paragraph(str(section.get("key", "section")).replace("_", " ").title(), styles["Heading3"]),
+            Paragraph(text, styles["BodyText"]),
         ]
     doc.build(story)
     return buffer.getvalue()

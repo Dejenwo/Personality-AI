@@ -45,6 +45,7 @@ from app.models import (
     utcnow,
 )
 from app.reports import build_report_payload, render_pdf
+from app.life.codes import CODE_BY_SLUG
 from app.scoring.archetypes import ARCHETYPES
 from app.scoring.engine import ScoringEngine, ScoringError
 
@@ -403,7 +404,12 @@ def get_result(result_id: str, user: User = Depends(get_current_user), db: Sessi
 def dashboard(user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     latest = (
         db.query(AssessmentResult)
-        .filter(AssessmentResult.user_id == user.id, AssessmentResult.instrument_slug.in_(["big-five", "quick-discovery", "comprehensive", "advanced"]))
+        .filter(
+            AssessmentResult.user_id == user.id,
+            AssessmentResult.instrument_slug.in_(
+                ["big-five", "quick-discovery", "quick-discovery-plain", "comprehensive", "advanced"]
+            ),
+        )
         .order_by(AssessmentResult.created_at.desc())
         .first()
     )
@@ -442,6 +448,8 @@ def list_archetypes():
             "palette": item["palette"],
             "symbol": item["symbol"],
             "description": item["description"],
+            "preference_code": CODE_BY_SLUG[item["slug"]]["code"],
+            "preference_title": CODE_BY_SLUG[item["slug"]]["title"],
         }
         for item in ARCHETYPES.values()
     ]
@@ -917,7 +925,21 @@ def get_sub(user: User = Depends(get_current_user), db: Session = Depends(get_db
         "plan": sub.plan if sub else "free",
         "status": sub.status if sub else "active",
         "cancel_at_period_end": sub.cancel_at_period_end if sub else False,
-        "pricing_hypothesis": {"monthly": 9.99, "annual": 69.99, "currency": "USD", "note": "Prices are initial hypotheses requiring market validation."},
+        "pricing_hypothesis": {
+            "monthly": 12.99,
+            "annual": 79.99,
+            "currency": "USD",
+            "reports": {
+                "personality": 9.99,
+                "career": 19.99,
+                "marriage": 19.99,
+                "relationship": 19.99,
+                "leadership": 19.99,
+                "development": 14.99,
+                "blueprint": 39.99,
+            },
+            "note": "Prices are configurable hypotheses requiring customer validation. Not a sales forecast.",
+        },
         "providers": {"stripe": "not_configured", "revenuecat": "not_configured", "apple": "not_configured", "google": "not_configured"},
     }
 

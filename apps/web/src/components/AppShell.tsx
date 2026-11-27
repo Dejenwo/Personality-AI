@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 const TABS = [
   { href: "/app", label: "Home", icon: "◎" },
   { href: "/app/discover", label: "Discover", icon: "✦" },
+  { href: "/app/guidance", label: "Guidance", icon: "◇" },
   { href: "/app/coach", label: "AI Coach", icon: "◈" },
-  { href: "/app/growth", label: "Growth", icon: "△" },
-  { href: "/app/profile", label: "Profile", icon: "○" },
+  { href: "/app/growth", label: "My Growth", icon: "△" },
 ];
 
 export function AppShell({ children, title }: { children: React.ReactNode; title?: string }) {

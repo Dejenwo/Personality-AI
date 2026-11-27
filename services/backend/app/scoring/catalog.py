@@ -135,6 +135,45 @@ MINI_IPIP_ITEMS = [
     _item("mini_20", "Do not have a good imagination.", "openness", "-"),
 ]
 
+# Wording adaptations of Mini-IPIP themes. Not the published Mini-IPIP.
+PLAIN_MINI_ITEMS = [
+    _item("plain_01", "I am often the one who gets a gathering going.", "extraversion", "+"),
+    _item("plain_02", "I feel for other people when they are hurting.", "agreeableness", "+"),
+    _item("plain_03", "I finish chores promptly instead of putting them off.", "conscientiousness", "+"),
+    _item("plain_04", "My mood changes a lot from day to day.", "emotional_stability", "-"),
+    _item("plain_05", "I picture things vividly in my mind.", "openness", "+"),
+    _item("plain_06", "I do not talk much in groups.", "extraversion", "-"),
+    _item("plain_07", "Other people's problems usually do not interest me.", "agreeableness", "-"),
+    _item("plain_08", "I often forget to put things back where they belong.", "conscientiousness", "-"),
+    _item("plain_09", "I am relaxed most of the time.", "emotional_stability", "+"),
+    _item("plain_10", "Abstract ideas usually do not interest me.", "openness", "-"),
+    _item("plain_11", "At parties I talk with many different people.", "extraversion", "+"),
+    _item("plain_12", "I pick up on how other people feel.", "agreeableness", "+"),
+    _item("plain_13", "I like things to be in order.", "conscientiousness", "+"),
+    _item("plain_14", "I get upset easily.", "emotional_stability", "-"),
+    _item("plain_15", "I find abstract ideas hard to follow.", "openness", "-"),
+    _item("plain_16", "I keep in the background in groups.", "extraversion", "-"),
+    _item("plain_17", "I am not especially interested in other people.", "agreeableness", "-"),
+    _item("plain_18", "I often make a mess of things I am responsible for.", "conscientiousness", "-"),
+    _item("plain_19", "I rarely feel sad or discouraged.", "emotional_stability", "+"),
+    _item("plain_20", "I do not have a strong imagination.", "openness", "-"),
+]
+
+FINANCIAL_ITEMS = [
+    _item("fin_01", "I know roughly what I spent last month.", "financial_behavior", "+", "tracking"),
+    _item("fin_02", "I avoid looking at my account balances.", "financial_behavior", "-", "avoidance"),
+    _item("fin_03", "I have a written list of bills and due dates.", "financial_behavior", "+", "organization"),
+    _item("fin_04", "I often buy things in the same hour I want them.", "financial_behavior", "-", "impulse"),
+    _item("fin_05", "I can delay a purchase for a week without distress.", "financial_behavior", "+", "delay"),
+    _item("fin_06", "I have money set aside for surprises, even a small amount.", "financial_behavior", "+", "emergency"),
+    _item("fin_07", "I discuss money with the people who share expenses with me.", "financial_behavior", "+", "communication"),
+    _item("fin_08", "I feel ashamed when I think about money, so I postpone it.", "financial_behavior", "-", "avoidance"),
+    _item("fin_09", "I could explain my largest three expenses to a friend.", "financial_behavior", "+", "tracking"),
+    _item("fin_10", "I take financial risks I do not understand.", "financial_behavior", "-", "risk"),
+    _item("fin_11", "I have a goal written as an amount and a date.", "financial_behavior", "+", "goals"),
+    _item("fin_12", "Household money tasks mostly fall on one person without agreement.", "financial_behavior", "-", "communication"),
+]
+
 
 def _original_items(prefix: str, trait: str, statements: list[tuple[str, Keyed, str]]) -> list[dict[str, Any]]:
     items = []
@@ -744,6 +783,51 @@ INSTRUMENTS: list[dict[str, Any]] = [
         "scientific": {
             "instrument_name": "IPIP Big-Five Factor Markers (50-item) with PersonalityDNA quality indicators",
             "validation_status": "research_backed_public_domain",
+        },
+    },
+    {
+        "slug": "quick-discovery-plain",
+        "name": "Quick Discovery (plain language)",
+        "short_name": "Plain Mini",
+        "version": "1.0.0",
+        "framework": "big_five",
+        "duration_minutes": 5,
+        "item_count": 20,
+        "is_free": True,
+        "tier": "free",
+        "category": "personality",
+        "description": "A PersonalityDNA wording adaptation of Mini-IPIP item themes. Original Mini-IPIP wording is preserved on slug quick-discovery. This adaptation is a separate, unvalidated instrument.",
+        "instructions": "Describe yourself as you generally are now. Each statement is meant to be everyday English.",
+        "scale": LIKERT_ACCURACY,
+        "items": PLAIN_MINI_ITEMS,
+        "completion_rule": {"min_answered_ratio": 1.0, "max_missing": 0},
+        "scientific": {
+            "instrument_name": "PersonalityDNA plain-language Mini-IPIP adaptation",
+            "validation_status": "original_unvalidated",
+            "limitations": "Rewritten wording is not the published Mini-IPIP. Do not treat scores as interchangeable with Donnellan et al. (2006) without a new study.",
+            "preserves_original": "quick-discovery",
+        },
+    },
+    {
+        "slug": "financial-behavior",
+        "name": "Financial Behavior Reflection",
+        "short_name": "Money habits",
+        "version": "1.0.0",
+        "framework": "original",
+        "duration_minutes": 4,
+        "item_count": 12,
+        "is_free": True,
+        "tier": "free",
+        "category": "finance",
+        "description": "Self-report of money habits. Not inferred from personality type. Not investment, tax, or legal advice.",
+        "instructions": "Answer about the last few months, not an ideal self.",
+        "scale": LIKERT_AGREE,
+        "items": FINANCIAL_ITEMS,
+        "completion_rule": {"min_answered_ratio": 0.8, "max_missing": 3},
+        "scientific": {
+            "instrument_name": "PersonalityDNA Financial Behavior Reflection",
+            "validation_status": "original_unvalidated",
+            "limitations": "Educational habit reflection only.",
         },
     },
 ]

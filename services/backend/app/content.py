@@ -86,6 +86,46 @@ PROGRAMS = [
         "summary": "Four seasonal reviews of goals, relationships, work, and health-adjacent habits (non-clinical).",
         "objectives": ["Four reviews", "One word for the year", "A discard list"],
     },
+    {
+        "slug": "seven-day-marriage-reflection",
+        "name": "7-Day Relationship Reflection",
+        "days": 7,
+        "category": "relationships",
+        "summary": "Private noticing. Not a promise to repair a marriage.",
+        "objectives": ["One appreciation", "One need in a sentence", "One repair"],
+    },
+    {
+        "slug": "thirty-day-marriage-communication",
+        "name": "30-Day Marriage Communication",
+        "days": 30,
+        "category": "relationships",
+        "summary": "Weekly conversations about money, labor, and repair. Not a compatibility program.",
+        "objectives": ["Four state-of-the-union talks", "A pause word", "No contempt scorekeeping"],
+    },
+    {
+        "slug": "ninety-day-shared-growth",
+        "name": "90-Day Shared Growth",
+        "days": 90,
+        "category": "relationships",
+        "summary": "Optional couple experiments with separate consent. Stop if safety is in question.",
+        "objectives": ["Shared calendar of experiments", "Individual opt-out honored"],
+    },
+    {
+        "slug": "thirty-day-money-habits",
+        "name": "30-Day Money Habits",
+        "days": 30,
+        "category": "finance",
+        "summary": "Tracking and a weekly money meeting. Not investment advice.",
+        "objectives": ["A spending log", "A buffer transfer", "One money conversation"],
+    },
+    {
+        "slug": "thirty-day-values",
+        "name": "30-Day Values Practice",
+        "days": 30,
+        "category": "purpose",
+        "summary": "Calendar vs claimed values. No inferred religion or politics.",
+        "objectives": ["A ranked list", "One conflict named", "A mission draft"],
+    },
 ]
 
 
