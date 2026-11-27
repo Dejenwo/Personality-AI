@@ -11,6 +11,7 @@ import re
 from typing import Any
 
 from app.config import get_settings
+from app.life.safety import ABUSE_RESPONSE, detect_abuse
 
 CRISIS_PATTERNS = [
     r"\bsuicid",
@@ -55,15 +56,28 @@ def select_agent(message: str) -> str:
         ("career", "career"),
         ("job", "career"),
         ("interview", "career"),
+        ("occupation", "career"),
+        ("marry", "marriage"),
+        ("marriage", "marriage"),
+        ("premarital", "marriage"),
+        ("parent", "parenting"),
+        ("child", "parenting"),
+        ("money", "finance"),
+        ("budget", "finance"),
+        ("spend", "finance"),
+        ("decid", "decision"),
         ("lead", "leadership"),
         ("delegate", "leadership"),
         ("relationship", "relationship"),
         ("partner", "relationship"),
         ("conflict", "relationship"),
+        ("value", "values"),
+        ("purpose", "values"),
         ("habit", "motivation"),
         ("goal", "motivation"),
         ("procrastinat", "motivation"),
         ("progress", "progress"),
+        ("blueprint", "report"),
         ("report", "report"),
         ("research", "education"),
         ("study", "education"),
@@ -101,7 +115,27 @@ class EducationalProvider:
             ),
             "career": (
                 "Career interests are not competence. Use them to generate questions and experiments, "
-                "then test against real tasks and values. PersonalityDNA will not rate hiring fitness."
+                "then test against real tasks and values. PersonalityDNA will not rate hiring fitness "
+                "or exclude a career because of a four-letter code."
+            ),
+            "marriage": (
+                "Marriage preparation is a set of conversations about values, money, children, repair, and safety. "
+                "I will not rank partners by personality type or issue a yes/no on a marriage."
+            ),
+            "parenting": (
+                "Parenting education is about your adult habits. I will not assign a personality type to a child "
+                "or infer a developmental condition."
+            ),
+            "finance": (
+                "Money guidance here is habit education: tracking, buffers, and conversations. "
+                "I will not infer wealth from personality or give investment, tax, or legal advice."
+            ),
+            "decision": (
+                "I can help you list alternatives, weights, risks, and missing information. "
+                "I will not make an irreversible life decision for you."
+            ),
+            "values": (
+                "Values have to be ranked by you. I will not infer religion or politics from a personality code."
             ),
             "leadership": (
                 "Leadership preferences describe how you like to influence, not whether you are allowed to lead. "
@@ -232,6 +266,14 @@ def get_provider():
 
 
 def coach_reply(message: str, context: dict[str, Any]) -> dict[str, Any]:
+    if detect_abuse(message):
+        return {
+            "provider": "safety",
+            "agent": "safety",
+            "content": ABUSE_RESPONSE,
+            "grounding": {"abuse_protocol": True},
+            "safety": {"abuse": True, "blocked_joint_exercises": True},
+        }
     if detect_crisis(message):
         return {
             "provider": "safety",

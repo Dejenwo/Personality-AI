@@ -421,3 +421,32 @@ class Feedback(Base):
     category: Mapped[str] = mapped_column(String(32), default="general")
     message: Mapped[str] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class DecisionJournal(Base):
+    __tablename__ = "decision_journal"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), index=True)
+    title: Mapped[str] = mapped_column(String(240))
+    decision: Mapped[str] = mapped_column(Text, default="")
+    alternatives: Mapped[dict[str, Any]] = mapped_column(JSON, default=list)
+    assumptions: Mapped[str] = mapped_column(Text, default="")
+    expected_outcomes: Mapped[str] = mapped_column(Text, default="")
+    chosen_action: Mapped[str] = mapped_column(Text, default="")
+    follow_up_date: Mapped[str] = mapped_column(String(10), default="")
+    actual_outcomes: Mapped[str] = mapped_column(Text, default="")
+    lessons: Mapped[str] = mapped_column(Text, default="")
+    matrix: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, onupdate=utcnow)
+
+
+class GuidanceRecord(Base):
+    __tablename__ = "guidance_records"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), index=True)
+    kind: Mapped[str] = mapped_column(String(32), index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)

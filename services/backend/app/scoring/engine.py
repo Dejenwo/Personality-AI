@@ -13,6 +13,7 @@ import statistics
 from dataclasses import asdict, dataclass, field
 from typing import Any, Iterable
 
+from app.life.codes import CODE_BY_SLUG, DISCLAIMER
 from app.scoring.archetypes import ARCHETYPES, ArchetypeMatch, match_archetypes
 from app.scoring.catalog import INSTRUMENTS, TRAIT_META, instrument_by_slug
 
@@ -99,6 +100,9 @@ class ScoringResult:
                     "trait scores. They are not scientifically established personality "
                     "categories and are not a Myers-Briggs type."
                 ),
+                "preference_code": CODE_BY_SLUG.get(self.archetype.slug, {}).get("code"),
+                "preference_title": CODE_BY_SLUG.get(self.archetype.slug, {}).get("title"),
+                "preference_code_disclaimer": DISCLAIMER,
             }
         return payload
 

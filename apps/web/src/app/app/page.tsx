@@ -16,7 +16,15 @@ type Dashboard = {
   latest: null | {
     id: string;
     payload: {
-      archetype?: { name: string; slug: string; tagline: string; mixed?: boolean; description: string };
+      archetype?: {
+        name: string;
+        slug: string;
+        tagline: string;
+        mixed?: boolean;
+        description: string;
+        preference_code?: string;
+        preference_title?: string;
+      };
       secondary_archetype?: { name: string; slug: string; tagline: string };
       trait_scores: Record<string, { name: string; mean: number; scaled_0_100: number; trait: string }>;
       strengths: string[];
@@ -79,7 +87,17 @@ export default function HomeDashboard() {
     <AppShell>
       <p className="text-sm uppercase tracking-[0.2em] text-teal">Today</p>
       <h1 className="font-display mt-2 text-4xl">{payload.archetype?.name || "Your profile"}</h1>
+      {payload.archetype?.preference_code ? (
+        <p className="mt-2 text-lg text-indigo">
+          {payload.archetype.preference_code} · {payload.archetype.preference_title}
+        </p>
+      ) : null}
       <p className="mt-2 max-w-2xl text-slate-600">{payload.archetype?.tagline}</p>
+      <div className="mt-4 flex flex-wrap gap-3">
+        <Link className="btn-primary" href="/app/guidance">Life guidance</Link>
+        <Link className="btn-secondary" href="/app/encyclopedia">Encyclopedia</Link>
+        <Link className="btn-secondary" href="/app/coach">Ask the coach</Link>
+      </div>
       {payload.archetype?.mixed ? (
         <p className="mt-2 text-sm text-indigo">Mixed profile — one or more traits were near the midpoint.</p>
       ) : null}

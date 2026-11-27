@@ -10,17 +10,17 @@ export default function PremiumPage() {
   return (
     <AppShell title="Premium subscription">
       <p className="max-w-xl text-slate-600">
-        Proposed pricing (hypothesis, not validated): $9.99 / month or $69.99 / year. Stripe, RevenueCat, Apple,
-        and Google purchases require credentials and store review.
+        Proposed pricing (hypothesis, not validated): $12.99 / month or $79.99 / year. Life Blueprint $39.99.
+        Stripe, RevenueCat, Apple, and Google purchases require credentials and store review. Encyclopedia remains free.
       </p>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <div className="card">
           <h2 className="font-display text-2xl">Monthly</h2>
-          <p className="mt-2 text-3xl">$9.99</p>
+          <p className="mt-2 text-3xl">$12.99</p>
         </div>
         <div className="card">
           <h2 className="font-display text-2xl">Annual</h2>
-          <p className="mt-2 text-3xl">$69.99</p>
+          <p className="mt-2 text-3xl">$79.99</p>
         </div>
       </div>
       <button

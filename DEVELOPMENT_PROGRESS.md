@@ -33,6 +33,7 @@ Statuses: Not Started · In Progress · Implemented · Tested · Verified · Blo
 | P23-01 | Performance | Load testing | P2 | Not Started | |
 | P24-01 | Beta | External beta | P2 | Blocked | Needs product owner |
 | P25-01 | Launch | Stores + production | P2 | Blocked | Credentials, legal, science review |
+| E1-13 | Life guidance | Encyclopedia, career O*NET explorer, marriage bank, decisions, finance, blueprint | P0 | Tested | docs/ENHANCEMENT_BACKLOG.md; tests/test_life.py |
 
 ## External blockers
 
